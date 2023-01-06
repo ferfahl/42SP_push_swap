@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   2_checkers.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/06 15:35:25 by feralves         ###   ########.fr       */
+/*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
+/*   Updated: 2023/01/06 16:03:04 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-//Libraries
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
-
-//Structs
-typedef struct s_data
+void	check_int(char *argv[])
 {
-	int		index;
-	int		status;
-}				t_data;
+	verificar o que eu recebo para ver se é um int
+	INT_MIN e INT_MAX
+}
 
-//Define
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-
-//Functions
-
-#endif
+int check_args(int argc, char *argv[])
+{
+	if (argc < 1)
+		if_error("Not enough arguments");
+	else if (argc == 1)
+		return (1);
+	else
+		check_int(argv);
+	return (0);
+}

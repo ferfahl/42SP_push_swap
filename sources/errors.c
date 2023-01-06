@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/06 15:35:25 by feralves         ###   ########.fr       */
+/*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
+/*   Updated: 2023/01/06 15:52:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-//Libraries
-# include <unistd.h>
-# include <stdlib.h>
-# include "libft/libft.h"
-
-//Structs
-typedef struct s_data
+void	if_error(char *str)
 {
-	int		index;
-	int		status;
-}				t_data;
-
-//Define
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
-
-//Functions
-
-#endif
+	ft_putstr_fd("Error", 2);
+	ft_putstr_fd(str, 2);
+	exit (1);
+}
