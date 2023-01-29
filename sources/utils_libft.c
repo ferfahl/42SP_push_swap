@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 13:21:29 by feralves         ###   ########.fr       */
+/*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
+/*   Updated: 2023/01/29 14:08:18 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(t_data *data)
+t_stack	*ft_stack_last(t_stack *stack)
 {
-	if (data)
-		free(data);
+	if (!stack)
+		return (NULL);
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
 
-void	ft_free_stack(t_stack *stack)
+
+void	ft_add_back(t_stack **lst, t_stack *new)
 {
-	if (stack)
-		free(stack);
+	t_stack	*last;
+
+	if (!new)
+		return ;
+	if (*lst == NULL)
+		(*lst) = new;
+	else
+	{
+		last = ft_stack_last(*lst);
+		last->next = new;
+	}
 }
 
-void	if_error(void *data)
+void	ft_add_front(t_stack **lst, t_stack *new)
 {
-	ft_putstr_fd("Error", 2);
-	ft_free(data);
-	exit (1);
+	new->next = *lst;
+	*lst = new;
 }

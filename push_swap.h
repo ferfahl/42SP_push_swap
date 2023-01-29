@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/28 21:36:51 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:46:33 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ typedef struct s_data
 	int		status;
 }				t_data;
 
-typedef struct stack
-{
-	int		*stack_a;
-	int		*stack_b;
-	int		size_a;
-	int		size_b;
-}				t_stack;
-
 typedef struct s_node
 {
 	t_data			data;
 	struct s_node	*next;
 }				t_node;
+
+typedef struct stack
+{
+	int				size;
+	struct s_node	*top;
+	struct s_node	*bottom;
+	
+}				t_stack;
 
 //Define
 # define INT_MIN -2147483648
