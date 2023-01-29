@@ -6,13 +6,13 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 18:46:05 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 20:26:53 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_new_node(void *number)
+t_node	*ft_new_node(int number)
 {
 	t_node	*new_node;
 

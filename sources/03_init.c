@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:22:19 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 18:49:13 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 20:16:26 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init_stack(t_stack *stack)
 {
-	stack->top = NULL;
+	stack->first = NULL;
 	stack->size = 0;
 }
 

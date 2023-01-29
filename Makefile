@@ -6,7 +6,11 @@ MANDATORY_FILES =	01_main.c \
 					03_init.c \
 					04_stack.c \
 					05_moves.c \
+					06_double_moves.c \
 					errors.c \
+					test.c \
+					utils.c \
+					utils_libft.c \
 
 BONUS_FILES =	
 
@@ -53,7 +57,7 @@ $(OBJPATH):
 #make libft
 $(LIBFT):
 		@echo "Compiling Libft..."
-		@make -C --no-print-directory $(LIBFT_PATH)
+		@make -C $(LIBFT_PATH) --no-print-directory
 
 #rule name - make push_swap
 $(NAME): $(LIBFT)  $(OBJ_MANDATORY)
