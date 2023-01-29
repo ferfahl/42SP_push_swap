@@ -6,39 +6,55 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 14:08:18 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:46:05 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stack_last(t_stack *stack)
+t_node	*ft_new_node(void *number)
 {
-	if (!stack)
+	t_node	*new_node;
+
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
 		return (NULL);
-	while (stack->next != NULL)
-		stack = stack->next;
-	return (stack);
+	new_node->data = number;
+	new_node->next = NULL;
+	return (new_node);
 }
 
-
-void	ft_add_back(t_stack **lst, t_stack *new)
+void	ft_add_back(t_stack **stack, t_node *new)
 {
-	t_stack	*last;
-
-	if (!new)
-		return ;
-	if (*lst == NULL)
-		(*lst) = new;
-	else
+	if (stack && new)
 	{
-		last = ft_stack_last(*lst);
-		last->next = new;
+		stack->last->next = new;
+		new->next = NULL;
+		new->prev = stack->last;
+		stack->last = new;
 	}
 }
 
-void	ft_add_front(t_stack **lst, t_stack *new)
+void	ft_add_front(t_stack **stack, t_node *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (stack && new)
+	{
+		stack->first->prev = new;
+		new->next = stack->first;
+		new->prev = NULL;
+		stack->first = new;
+	}
+}
+
+void	ft_remove_front(t_stack *stack)
+{
+	t_node *temp;
+
+	if (stack)
+	{
+		temp = stack->first;
+		stack->first = stack->first->next;
+		stack->first->prev = NULL;
+		free(temp);
+	}
 }

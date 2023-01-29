@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:22:19 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/28 21:35:10 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:49:13 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	init_stack(t_stack *stack)
 }
 
 // iniciar as stacks A e B com NULL e size = 0
-
 void	start_push(char **argv)
 {
 	t_stack	*stack_a;
@@ -30,5 +29,4 @@ void	start_push(char **argv)
 	init_stack(stack_a);
 	init_stack(stack_b);
 	fill_stack(stack_a, argv);
-	push_swap(stack_a, stack_b);
 }
