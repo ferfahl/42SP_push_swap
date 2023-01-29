@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/28 21:38:09 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:51:45 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	check_int(char *argv[])
 //verificar se os valores são inteiros
 //verificar se os valores são únicos
 //verificar se os valores estão dentro do range de int
-//transformar os valores em inteiros
+
 
 int check_args(int argc, char *argv[])
 {

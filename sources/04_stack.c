@@ -6,13 +6,14 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 18:49:56 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/29 18:51:49 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //adicionar os valores recebidos no stack A
+//transformar os valores em inteiros
 void	fill_stack(t_stack *stack, char **argv)
 {
 	int i;
