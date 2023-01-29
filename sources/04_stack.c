@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_main.c                                           :+:      :+:    :+:   */
+/*   04_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 15:55:14 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/06 16:02:56 by feralves         ###   ########.fr       */
+/*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
+/*   Updated: 2023/01/28 21:38:31 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-int	main(int argc, char *argv[])
-{
-	if (check_args(argc, argv))
-		return (1);
-	start_push(argv);
-}
+//adicionar os valores recebidos no stack A
+//verificar se o stack A está ordenado
+//se estiver ordenado, não precisa fazer nada
+//se não estiver ordenado, chama o algoritmo escolhido

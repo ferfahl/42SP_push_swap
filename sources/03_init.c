@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2_checkers.c                                       :+:      :+:    :+:   */
+/*   03_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/06 16:03:04 by feralves         ###   ########.fr       */
+/*   Created: 2023/01/28 21:22:19 by feralves          #+#    #+#             */
+/*   Updated: 2023/01/28 21:35:10 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_int(char *argv[])
+void	init_stack(t_stack *stack)
 {
-	verificar o que eu recebo para ver se é um int
-	INT_MIN e INT_MAX
+	stack->top = NULL;
+	stack->size = 0;
 }
 
-int check_args(int argc, char *argv[])
+// iniciar as stacks A e B com NULL e size = 0
+
+void	start_push(char **argv)
 {
-	if (argc < 1)
-		if_error("Not enough arguments");
-	else if (argc == 1)
-		return (1);
-	else
-		check_int(argv);
-	return (0);
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	stack_a = (t_stack *)malloc(sizeof(t_stack));
+	stack_b = (t_stack *)malloc(sizeof(t_stack));
+	init_stack(stack_a);
+	init_stack(stack_b);
+	fill_stack(stack_a, argv);
+	push_swap(stack_a, stack_b);
 }

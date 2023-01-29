@@ -1,7 +1,12 @@
 #####################INPUTS#####################
 
 #scr functions
-MANDATORY_FILES =	
+MANDATORY_FILES =	01_main.c \
+					02_check.c \
+					03_init.c \
+					04_stack.c \
+					05_moves.c \
+					errors.c \
 
 BONUS_FILES =	
 
@@ -21,7 +26,7 @@ INCLUDE =	-I ./ -I $(LIBFT_PATH)
 
 #compiling
 CC =	gcc
-FLAGS =	-Wall -Werror -Wextra -g3 #-O3
+FLAGS =	-Wall -Werror -Wextra -g3
 GDB =	gdb
 VAL =	valgrind --trace-children=yes --track-fds=yes --leak-check=full --track-origins=yes
 
@@ -48,7 +53,7 @@ $(OBJPATH):
 #make libft
 $(LIBFT):
 		@echo "Compiling Libft..."
-		@make -C $(LIBFT_PATH)
+		@make -C --no-print-directory $(LIBFT_PATH)
 
 #rule name - make push_swap
 $(NAME): $(LIBFT)  $(OBJ_MANDATORY)
