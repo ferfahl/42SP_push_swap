@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 20:31:45 by feralves         ###   ########.fr       */
+/*   Updated: 2023/01/30 22:42:12 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct stack
 	int				size;
 	struct s_node	*first;
 	struct s_node	*last;
-	
+
 }				t_stack;
 
 //Define
