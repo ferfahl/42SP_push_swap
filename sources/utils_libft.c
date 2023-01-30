@@ -24,7 +24,7 @@ t_node	*ft_new_node(int number)
 	return (new_node);
 }
 
-void	ft_add_back(t_stack **stack, t_node *new)
+void	ft_add_back(t_stack *stack, t_node *new)
 {
 	if (stack && new)
 	{
@@ -35,7 +35,7 @@ void	ft_add_back(t_stack **stack, t_node *new)
 	}
 }
 
-void	ft_add_front(t_stack **stack, t_node *new)
+void	ft_add_front(t_stack *stack, t_node *new)
 {
 	if (stack && new)
 	{

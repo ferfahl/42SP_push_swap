@@ -56,6 +56,6 @@ void	fill_stack(t_stack *stack, char **argv);
 
 //Libft modified functions
 t_node	*ft_new_node(int number);
-void	ft_add_back(t_stack **stack, t_node *new);
+void	ft_add_back(t_stack *stack, t_node *new);
 
 #endif

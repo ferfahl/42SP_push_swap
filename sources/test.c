@@ -15,15 +15,18 @@
 int	main(int argc, char *argv[])
 {
 	t_stack	*stack_a;
+	t_node	*aux;
 
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_a)
 		return (0);
 	fill_stack(stack_a, argv);
-	while (stack_a->next != NULL)
+	aux = stack_a->first;
+	while (aux)
 	{
-		ft_printf("%d\n", stack_a->value);
-		stack_a = stack_a->next;
+		ft_printf("%d\n", aux->data);
+		aux = aux->next;
 	}
+	(void)argc;
 	return (0);
 }
