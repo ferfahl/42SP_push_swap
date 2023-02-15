@@ -2,9 +2,9 @@
 
 #scr functions
 MANDATORY_FILES =	01_main.c \
-					02_check.c \
-					03_init.c \
-					04_stack.c \
+					02_init.c \
+					03_stack.c \
+					04_check.c \
 					05_moves.c \
 					06_double_moves.c \
 					errors.c \
@@ -12,7 +12,7 @@ MANDATORY_FILES =	01_main.c \
 					utils.c \
 					utils_libft.c \
 
-BONUS_FILES =	
+BONUS_FILES =
 
 #static library's name
 NAME =		push_swap

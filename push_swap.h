@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/30 22:42:12 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/15 21:09:45 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void	fill_stack(t_stack *stack, char **argv);
 // void	ft_rotate(t_stack **stack);
 // void	ft_add_back(t_stack **stack, t_node *new);
 // void	ft_add_front(t_stack **stack, t_node *new);
+
+//Error functions
+void	error_simple(void);
+void	if_error(void *data);
 
 //Libft modified functions
 t_node	*ft_new_node(int number);

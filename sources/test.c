@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:09:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/30 22:49:06 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/15 21:56:10 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,24 @@ void	ft_print_stack(t_stack *stack_a)
 	}
 	ft_printf("\n");
 }
+/*
+
+void	fill_stack_argv(t_stack *stack, char **argv)
+{
+	int i;
+	int	temp;
+	t_node *new_node;
+
+	i = 1;
+	while (argv[i])
+	{
+		temp = ft_atoi_mod(argv[i]);
+		new_node = ft_new_node(temp);
+		ft_add_back(stack, new_node);
+		i++;
+	}
+}
+
 
 int	main(int argc, char *argv[])
 {
@@ -46,3 +64,5 @@ int	main(int argc, char *argv[])
 	(void)argc;
 	return (0);
 }
+*/
+
