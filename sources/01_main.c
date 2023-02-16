@@ -6,35 +6,41 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 15:55:14 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 21:51:16 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/15 22:47:25 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//como eu retorno a lista se existir?
-void	check_if_list(char *argv[])
+//checa argumentos não suficientes
+//se for um número, retorna o numero
+//checa demais numeros do argv
+void	check_args(int argc, char **argv)
 {
-	char	*temp;
-	char	**list_temp;
-
-	temp = argv[1]
-	list_temp = ft_split(temp, " ");
-	if (list_temp)
-		return (list_temp);
-	error_simple();
-}
-
-//checa argumentos não suficientes, chega se 1 argumento só é uma lista
-//se não for uma lista, mas for um número, retorna o numero
-//se for lista, coloca em um **
-void check_args(int argc, char *argv[])
-{
-	if (argc < 1)
-		return(1);
-	else if (argc == 1)
-		check_if_list(argv);
-	return (0);
+	if (argc <= 1)
+		exit(1);
+	else if (argc == 2)
+	{
+		if (argv[1] == NULL)
+			error_simple();
+		if (check_int(argv))
+		{
+			ft_printf("%s\n", argv[1]);
+			exit(0);
+		}	
+		else
+			error_simple();
+	}
+	else
+	{
+		while (argv)
+		{
+			if (check_int(argv))
+				return ;
+			else
+				error_simple();
+		}
+	}
 }
 
 //checa argumentos
@@ -42,7 +48,7 @@ void check_args(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	check_args(argc, argv);
-	start_push(argc, argv);
+	start_push(argv);
 	return (0);
 }
 

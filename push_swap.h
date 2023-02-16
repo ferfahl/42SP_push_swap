@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 21:09:45 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/15 23:05:30 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 typedef struct s_node
 {
-	int				data;
+	long int		data;
 	struct s_node	*next;
 	struct s_node	*prev;
 }				t_node;
@@ -45,8 +45,14 @@ typedef struct stack
 # define INT_MAX 2147483647
 
 //Functions
+//checking functions
+int	check_int(char **argv);
+void	ft_print_stack(t_stack *stack_a);
+
+
 //fill stack with args
-void	fill_stack(t_stack *stack, char **argv);
+void	start_push(char **argv);
+void	fill_stack(t_stack *stack, char **rec_list);
 
 // //Moving functions
 // void	ft_swap(int *a, int *b);
@@ -57,6 +63,8 @@ void	fill_stack(t_stack *stack, char **argv);
 //Error functions
 void	error_simple(void);
 void	if_error(void *data);
+void	ft_free(t_stack *stack);
+void	ft_clear_node(t_node *node);
 
 //Libft modified functions
 t_node	*ft_new_node(int number);
