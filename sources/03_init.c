@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   03_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:08:05 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:46:05 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//adiciona um nó no final da lista
-t_data	*add_node_value(long int number, int i)
+// adiciona um nó no final da lista
+t_data *add_node_value(long int number, int i)
 {
-	t_data	*new_node;
+	t_data *new_node;
 
 	new_node = (t_data *)malloc(sizeof(t_data));
 	if (!new_node)
@@ -26,12 +26,13 @@ t_data	*add_node_value(long int number, int i)
 	return (new_node);
 }
 
-//verifica se o número já existe na lista
-//se não existir, adiciona o nó no final da lista, colocando o index dele de
-//acordo com o valor maior ou menor
-void	add_next_node(t_data **list, long int number, int i)
+
+// verifica se o número já existe na lista
+// se não existir, adiciona o nó no final da lista, colocando o index dele de
+// acordo com o valor maior ou menor
+void add_next_node(t_data **list, long int number, int i)
 {
-	t_data	*temp;
+	t_data *temp;
 
 	temp = *list;
 	if (number > INT_MAX || number < INT_MIN)
@@ -45,16 +46,16 @@ void	add_next_node(t_data **list, long int number, int i)
 		else
 			i++;
 		if (!temp->next)
-			break ;
+			break;
 		temp = temp->next;
 	}
 	temp->next = add_node_value(number, i);
 }
 
-//cria a lista com os valores passados como argumentos
-void	init_list(int argc, char **argv, t_data **list)
+// cria a lista com os valores passados como argumentos
+void init_list(int argc, char **argv, t_data **list)
 {
-	int	i;
+	int i;
 
 	i = 1;
 	if (*list == NULL)
@@ -62,17 +63,19 @@ void	init_list(int argc, char **argv, t_data **list)
 	while (++i < argc)
 		add_next_node(list, (ft_atoi_mod(argv[i])), 1);
 }
-	// print_list_test(list);
+// print_list_test(list);
 
-//iniciar o programa
-void	start_push(int argc, char **argv)
+// iniciar o programa
+void start_push(int argc, char **argv)
 {
-	t_data	**temp;
+	t_data **temp;
 
 	temp = (t_data **)ft_calloc(1, sizeof(t_data *));
 	if (!temp)
 		error_simple();
 	init_list(argc, argv, temp);
+	if (check_sorted(*temp) == TRUE)
+		success_exit(temp);
 	start_stack(temp);
 	ft_free_list(temp);
 }
