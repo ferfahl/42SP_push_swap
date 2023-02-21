@@ -101,7 +101,7 @@ $(B_NAME): $(LIBFT)  $(OBJ_BONUS)
 ##compile MANDATORY
 $(OBJPATH)/%.o: $(MANDATORY_PATH)/%.c $(HEADER)
 		@cc $(FLAGS) -c $< -o $@ $(INCLUDE)
-		@echo -n "$(YELLOW)Compiling $(WHITE)$$(( $(PROGRESS) * 100 / $(NUMBER_OF_FILES)))%\r"
+		@echo -n "$(YELLOW)Compiling ${NAME} $(WHITE)$$(( $(PROGRESS) * 100 / $(NUMBER_OF_FILES)))%\r"
 		$(eval PROGRESS=$(shell echo $$(($(PROGRESS)+1))))
 
 ##compile BONUS
@@ -114,18 +114,15 @@ mem:
 
 #make clean -> remove objects
 clean:
-		@$(LOG) "Removing Libft..."
 		@make clean -C $(LIBFT_PATH) --no-print-directory
 		@$(LOG) "Removing objects..."
 		@$(RM) $(OBJ_MANDATORY) $(OBJ_BONUS)
-		@$(LOG_SUC) "*.o cleaned!"
 
 #make fclean -> remove all
 fclean: clean
 		@make fclean -C $(LIBFT_PATH) --no-print-directory
 		@$(LOG) "Removing executable..."
 		@$(RM) $(NAME) $(B_NAME)
-		@$(LOG) "Removing objects directory..."
 		@$(RM_DIR) $(OBJPATH)
 		@$(LOG_SUC) "Cleaned project!"
 
@@ -143,4 +140,5 @@ git:
 		git push
 
 norm:
-		norminette /${MANDATORY_PATH}/${MANDATORY_FILES} | grep -v "OK!"
+		clear
+		norminette ${addprefix ${MANDATORY_PATH}/, ${MANDATORY_FILES}} | grep -v "OK!"

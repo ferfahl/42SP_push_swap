@@ -134,7 +134,7 @@ $(OBJPATH):
 ##compile libft
 $(OBJPATH)/%.o: $(SRC_PATH)/%.c $(HEADER)
 		@cc $(FLAGS) -c $< -o $@ $(INCLUDE)
-		@echo -n "$(YELLOW)Compiling $(WHITE)$$(( $(PROGRESS) * 100 / $(NUMBER_OF_FILES)))%\r"
+		@echo -n "$(YELLOW)Compiling $(NAME) $(WHITE)$$(( $(PROGRESS) * 100 / $(NUMBER_OF_FILES)))%\r"
 		$(eval PROGRESS=$(shell echo $$(($(PROGRESS)+1))))
 
 ##compile bonus
@@ -165,12 +165,11 @@ main:
 #remove objects
 clean:
 		@$(RM) $(OBJ) $(OBJ_GNL) $(OBJ_PRINTF) $(OBJ_OTHER) $(OBJ_BONUS)
-		@$(LOG) "Cleaned Libft"
 
 #remove all
 fclean: clean
 		@$(RM) $(NAME) $(RM_DIR) $(OBJPATH)
-		@$(LOG) "All files cleaned!"
+		@$(LOG) "All files from Libft cleaned!"
 
 #clear all
 re:		fclean all
