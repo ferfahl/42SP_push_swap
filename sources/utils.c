@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:52:08 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 20:45:31 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:55:52 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@
 // // 	ft_putstr_fd(move, 1);
 // // }
 
-void	ft_clear_node(t_node *node)
+void ft_clear_node(t_node *node)
 {
-	t_node	*aux;
+	t_node *aux;
 
 	if (node == NULL)
-		return ;
+		return;
 	while (node)
 	{
 		aux = node->next;
@@ -43,8 +43,8 @@ void	ft_clear_node(t_node *node)
 	}
 }
 
-//retorna sucesso
-void success_exit(void **temp)
+// retorna sucesso
+void success_exit(t_data **temp)
 {
 	ft_free_list(temp);
 	exit(0);
