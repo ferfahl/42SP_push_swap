@@ -9,12 +9,14 @@ B_NAME =	push_swap_bonus
 #colors
 RESET 			:= \033[0m
 GREEN			=	\e[32m
-RED				=	\e[91m
+CYAN  			:= \33[1;36m
 YELLOW			=	\e[033m
 BLUE			=	\e[34m
+WHITE			=	\e[00m
 
 #printing
-LOG   			:= printf "[$(GREEN)INFO$(RESET)] %s\n"
+LOG   			:= printf "[$(GREEN)PROJECT_INFO$(RESET)] %s\n"
+LOG_SUC			:= printf "[$(CYAN)COMPILING_INFO$(RESET)] %s\n"
 
 ################################################################################
 ##                                DIRECTORIES                                 ##
@@ -63,6 +65,7 @@ RM_DIR =	rm -rf
 OBJ_MANDATORY = $(MANDATORY_FILES:%.c=$(OBJPATH)/%.o)
 OBJ_BONUS = $(BONUS_FILES:%.c=$(OBJPATH)/%.o)
 
+#compiling bar
 NUMBER_OF_FILES	=	$(words $(MANDATORY_FILES))
 PROGRESS			=	0
 
@@ -79,7 +82,7 @@ bonus: $(OBJPATH) $(B_NAME)
 ##folder for temporary objects
 $(OBJPATH):
 		@mkdir -p $(OBJPATH)
-		@$(LOG) "Creating objects directory"
+		@$(LOG) "Creating objects directory..."
 
 ##make libft
 $(LIBFT):
@@ -88,16 +91,17 @@ $(LIBFT):
 
 ##rule name - make push_swap
 $(NAME): $(LIBFT)  $(OBJ_MANDATORY)
-		cc $(FLAGS) -o $(NAME) $(OBJ_MANDATORY) $(LIBFT)
+		@cc $(FLAGS) -o $(NAME) $(OBJ_MANDATORY) $(LIBFT)
+		@$(LOG_SUC) "*$(NAME) succesfully compiled!"
 
 ##rule name - make push_swap_bonus
 $(B_NAME): $(LIBFT)  $(OBJ_BONUS)
-		cc $(FLAGS) -o $(B_NAME) $(OBJ_BONUS) $(LIBFT)
+		@cc $(FLAGS) -o $(B_NAME) $(OBJ_BONUS) $(LIBFT)
 
 ##compile MANDATORY
 $(OBJPATH)/%.o: $(MANDATORY_PATH)/%.c $(HEADER)
-		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
-		@echo -n "$(YELLOW)Compiling $(RESET)$$(( $(PROGRESS) * 100 / $(NUMBER_OF_FILES)))%\r"
+		@cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+		@echo -n "$(YELLOW)Compiling $(WHITE)$$(( $(PROGRESS) * 100 / $(NUMBER_OF_FILES)))%\r"
 		$(eval PROGRESS=$(shell echo $$(($(PROGRESS)+1))))
 
 ##compile BONUS
@@ -110,30 +114,27 @@ mem:
 
 #make clean -> remove objects
 clean:
-		@$(LOG) "Removing Libft"
+		@$(LOG) "Removing Libft..."
 		@make clean -C $(LIBFT_PATH) --no-print-directory
-		@$(LOG) "Removing objects"
+		@$(LOG) "Removing objects..."
 		@$(RM) $(OBJ_MANDATORY) $(OBJ_BONUS)
+		@$(LOG_SUC) "*.o cleaned!"
 
 #make fclean -> remove all
 fclean: clean
 		@make fclean -C $(LIBFT_PATH) --no-print-directory
-		@$(LOG) "Removing executable"
+		@$(LOG) "Removing executable..."
 		@$(RM) $(NAME) $(B_NAME)
-		@$(LOG) "Removing objects directory"
+		@$(LOG) "Removing objects directory..."
 		@$(RM_DIR) $(OBJPATH)
+		@$(LOG_SUC) "Cleaned project!"
 
 #make re -> clear all and recompliles
 re:		fclean all
-		@$(LOG) "Recompiled succesfully"
+		@$(LOG_SUC) "Recompiled succesfully!"
 
 ##avoids double inclusion
 .PHONY: all clean fclean re bonus
-
-#make norm -> verify norm
-norm:
-		@clear
-		@norminette ${MANDATORY_FILES} ${INCDIR}* | grep Error || true
 
 #make git m="message" -> commit to git
 git:
