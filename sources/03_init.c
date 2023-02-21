@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 20:46:05 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:54:12 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_data *add_node_value(long int number, int i)
 	new_node->index = i;
 	return (new_node);
 }
-
 
 // verifica se o número já existe na lista
 // se não existir, adiciona o nó no final da lista, colocando o index dele de
@@ -74,7 +73,7 @@ void start_push(int argc, char **argv)
 	if (!temp)
 		error_simple();
 	init_list(argc, argv, temp);
-	if (check_sorted(*temp) == TRUE)
+	if (check_sorted(*temp))
 		success_exit(temp);
 	start_stack(temp);
 	ft_free_list(temp);

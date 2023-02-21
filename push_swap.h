@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 20:03:29 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:55:49 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct stack
 int check_int(char **argv);
 void ft_print_stack(t_stack *stack_a);
 void print_list_test(t_data **list);
+t_bool check_sorted(t_data *list);
 
 // fill list/stack with args
 void start_push(int argc, char **argv);
@@ -74,6 +75,9 @@ void if_error(void *data, char a);
 void ft_free_stack(t_stack *stack);
 void ft_free_list(t_data **list);
 void ft_clear_node(t_node *node);
+
+// Success functions
+void success_exit(t_data **temp);
 
 // Libft modified functions
 t_node *ft_new_node(int number);
