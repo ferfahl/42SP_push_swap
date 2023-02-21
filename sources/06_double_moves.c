@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 18:23:30 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/29 20:32:03 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:15:51 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@
 // 	ft_print_moves("rr");
 // }
 
-// // (rra, rrb, rrr) reverse rotate: mover o elemento do final da pilha para o topo
+// // (rra, rrb, rrr) reverse rotate: mover o elemento do final da pilha para o
+//topo
 // void	ft_double_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 // {
 // 	ft_reverse_rotate(stack_a);

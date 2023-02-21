@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:07:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 20:48:19 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:24:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_args(int argc, char **argv)
 				error_simple();
 		}
 	}
-} 
+}
 
 //checa argumentos
 //chama o programa

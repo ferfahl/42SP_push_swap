@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 20:36:03 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:14:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ typedef struct stack
 
 }				t_stack;
 
-
 //Define
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
@@ -51,7 +50,6 @@ typedef struct stack
 int		check_int(char **argv);
 void	ft_print_stack(t_stack *stack_a);
 void	print_list_test(t_data **list);
-
 
 //fill list/stack with args
 void	start_push(int argc, char **argv);

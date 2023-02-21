@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 21:22:19 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 16:19:509 by feralves         ###   ########.fr       */
+/*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
+/*   Updated: 2023/02/21 15:21:45 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_data	*add_node_value(long int number, int i)
 }
 
 //verifica se o número já existe na lista
-//se não existir, adiciona o nó no final da lista, colocando o index dele de 
+//se não existir, adiciona o nó no final da lista, colocando o index dele de
 //acordo com o valor maior ou menor
 void	add_next_node(t_data **list, long int number, int i)
 {
@@ -57,24 +57,22 @@ void	init_list(int argc, char **argv, t_data **list)
 	int	i;
 
 	i = 1;
-	if(*list == NULL)
+	if (*list == NULL)
 		*list = add_node_value((ft_atoi_mod(argv[i])), 1);
-	while(++i < argc)
+	while (++i < argc)
 		add_next_node(list, (ft_atoi_mod(argv[i])), 1);
-
-	// print_list_test(list);
 }
+	// print_list_test(list);
 
 //iniciar o programa
 void	start_push(int argc, char **argv)
 {
 	t_data	**temp;
-	
+
 	temp = (t_data **)ft_calloc(1, sizeof(t_data *));
-	if (!temp) 
+	if (!temp)
 		error_simple();
 	init_list(argc, argv, temp);
 	start_stack(temp);
 	ft_free_list(temp);
 }
-

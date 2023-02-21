@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:09:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 18:56:04 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:17:10 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_print_stack(t_stack *stack_a)
 }
 
 //imprime a lista com index para verificação
-void print_list_test(t_data **list)
+void	print_list_test(t_data **list)
 {
 	while (*list)
 	{

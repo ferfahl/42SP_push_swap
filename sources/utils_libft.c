@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
-/*   Updated: 2023/01/30 23:07:45 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:16:47 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_add_front(t_stack *stack, t_node *new)
 
 void	ft_remove_front(t_stack *stack)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (stack)
 	{

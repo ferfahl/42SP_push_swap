@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 21:03:22 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:17:46 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,8 @@ void	start_stack(t_data **list)
 	ft_print_stack(stack_a);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
-	// check_stack(stack_a);
 }
-
+	// check_stack(stack_a);
 
 // função
 // 	verifica stack_a < 5
@@ -65,8 +64,7 @@ void	start_stack(t_data **list)
 // 	enquanto stack_a > 5
 // 		o negocio dos 30%
 // 	fazer um sort especifico nosso pra 5
-	
-	
+
 //verificar se o stack A está ordenado
 //se estiver ordenado, não precisa fazer nada
 //se não estiver ordenado, chama o algoritmo escolhido

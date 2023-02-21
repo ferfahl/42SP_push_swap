@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 20:14:35 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:24:30 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 //verificar se os valores são inteiros
 int	check_int(char **argv)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 1;
-	while(argv[i])
+	while (argv[i])
 	{
 		j = 0;
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
 		if (!(ft_isdigit(argv[i][j])))
 			error_simple();
-		while(argv[i][j])
+		while (argv[i][j])
 		{
 			if (!ft_isdigit(argv[i][j]))
 				error_simple();
@@ -41,11 +41,10 @@ int	check_int(char **argv)
 // void    check_stack(t_stack *stack)
 // {
 //     t_node *temp;
-	
+
 //     while(stack->first)
 //     {
 //         temp = stack->first->data;
-		
+
 //     }
 // }
-
