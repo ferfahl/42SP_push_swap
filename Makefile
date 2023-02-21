@@ -141,3 +141,6 @@ git:
 		git add .
 		git commit -m "$(m)"
 		git push
+
+norm:
+		norminette /${MANDATORY_PATH}/${MANDATORY_FILES} | grep -v "OK!"

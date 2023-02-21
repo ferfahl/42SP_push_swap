@@ -10,8 +10,6 @@ NAME = libft.a
 
 #colors
 RESET 		:= \033[0m
-GREEN		=	\e[32m
-RED			=	\e[91m
 YELLOW		=	\e[033m
 BLUE		=	\e[34m
 WHITE		=	\e[00m
