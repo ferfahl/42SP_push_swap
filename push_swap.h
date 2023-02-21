@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 23:05:30 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/20 20:36:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 # include "libft/libft.h"
 
 //Structs
-// typedef struct s_data
-// {
-// 	int		index;
-// 	int		status;
-// }				t_data;
+typedef struct s_data
+{
+	int				index;
+	int				value;
+	struct s_data	*next;
+}				t_data;
 
 typedef struct s_node
 {
@@ -40,19 +41,22 @@ typedef struct stack
 
 }				t_stack;
 
+
 //Define
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
 //Functions
 //checking functions
-int	check_int(char **argv);
+int		check_int(char **argv);
 void	ft_print_stack(t_stack *stack_a);
+void	print_list_test(t_data **list);
 
 
-//fill stack with args
-void	start_push(char **argv);
-void	fill_stack(t_stack *stack, char **rec_list);
+//fill list/stack with args
+void	start_push(int argc, char **argv);
+void	fill_stack(t_stack *stack, t_data *list);
+void	start_stack(t_data **list);
 
 // //Moving functions
 // void	ft_swap(int *a, int *b);
@@ -62,8 +66,9 @@ void	fill_stack(t_stack *stack, char **rec_list);
 
 //Error functions
 void	error_simple(void);
-void	if_error(void *data);
-void	ft_free(t_stack *stack);
+void	if_error(void *data, char a);
+void	ft_free_stack(t_stack *stack);
+void	ft_free_list(t_data **list);
 void	ft_clear_node(t_node *node);
 
 //Libft modified functions

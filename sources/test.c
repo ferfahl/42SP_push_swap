@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:09:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 21:56:10 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/20 18:56:04 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,36 +33,13 @@ void	ft_print_stack(t_stack *stack_a)
 	}
 	ft_printf("\n");
 }
-/*
 
-void	fill_stack_argv(t_stack *stack, char **argv)
+//imprime a lista com index para verificação
+void print_list_test(t_data **list)
 {
-	int i;
-	int	temp;
-	t_node *new_node;
-
-	i = 1;
-	while (argv[i])
+	while (*list)
 	{
-		temp = ft_atoi_mod(argv[i]);
-		new_node = ft_new_node(temp);
-		ft_add_back(stack, new_node);
-		i++;
+		ft_printf("value: %d, index: %d\n", (*list)->value, (*list)->index);
+		(*list) = (*list)->next;
 	}
 }
-
-
-int	main(int argc, char *argv[])
-{
-	t_stack	*stack_a;
-
-	stack_a = (t_stack *)calloc(1, sizeof(t_stack));
-	if (!stack_a)
-		return (0);
-	fill_stack(stack_a, argv);
-	ft_print_stack(stack_a);
-	(void)argc;
-	return (0);
-}
-*/
-

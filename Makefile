@@ -32,7 +32,8 @@ INCLUDE =	-I ./ -I $(LIBFT_PATH)
 CC =	gcc
 FLAGS =	-Wall -Werror -Wextra -g3
 GDB =	gdb
-VAL =	valgrind --trace-children=yes --track-fds=yes --leak-check=full --track-origins=yes
+VAL =	valgrind --leak-check=full --track-origins=yes
+## --trace-children=yes --track-fds=yes 
 
 # clean
 RM =		-rm -f
@@ -74,6 +75,10 @@ $(OBJPATH)/%.o: $(MANDATORY_PATH)/%.c $(HEADER)
 #compile BONUS
 $(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
 		cc $(FLAGS) -c $< -o $@ $(INCLUDE)
+
+#mcheck
+mem:
+		$(VAL) ./$(NAME) "42", "598", "1", "-987", "411", "42"
 
 #remove objects
 clean:

@@ -6,13 +6,13 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 23:04:20 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:50:22 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(t_stack *stack)
+void	ft_free_stack(t_stack *stack)
 {
 	if (stack == NULL)
 		return ;
@@ -23,11 +23,27 @@ void	ft_free(t_stack *stack)
 	stack = NULL;
 }
 
-//função para limpar algum tipo de arquivo
-void	if_error(void *data)
+void	ft_free_list(t_data **list)
 {
-	ft_putstr_fd("Error", 2);
-	ft_free(data);
+	int	index;
+
+	index = 0;
+	while (list[index])
+	{
+		free(list[index]);
+		index++;
+	}
+	free(list);
+}
+
+//função para limpar algum tipo de arquivo
+void	if_error(void *data, char a)
+{
+	ft_putstr_fd("Error\n", 2);
+	if (a == 'l')
+		ft_free_list(data);
+	else if (a == 's')
+		ft_free_stack(data);
 	exit (1);
 }
 

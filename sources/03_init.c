@@ -6,57 +6,75 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:22:19 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 23:04:29 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/20 16:19:509 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//adicionar os valores recebidos separados no stack A
-void	fill_stack(t_stack *stack, char **rec_list)
+//adiciona um nó no final da lista
+t_data	*add_node_value(long int number, int i)
 {
-	int			i;
-	long int	temp;
-	t_node		*new_node;
+	t_data	*new_node;
+
+	new_node = (t_data *)malloc(sizeof(t_data));
+	if (!new_node)
+		error_simple();
+	new_node->value = number;
+	new_node->next = NULL;
+	new_node->index = i;
+	return (new_node);
+}
+
+//verifica se o número já existe na lista
+//se não existir, adiciona o nó no final da lista, colocando o index dele de 
+//acordo com o valor maior ou menor
+void	add_next_node(t_data **list, long int number, int i)
+{
+	t_data	*temp;
+
+	temp = *list;
+	if (number > INT_MAX || number < INT_MIN)
+		if_error(list, 'l');
+	while (temp)
+	{
+		if (temp->value == number)
+			if_error(list, 'l');
+		if (temp->value > number)
+			temp->index++;
+		else
+			i++;
+		if (!temp->next)
+			break ;
+		temp = temp->next;
+	}
+	temp->next = add_node_value(number, i);
+}
+
+//cria a lista com os valores passados como argumentos
+void	init_list(int argc, char **argv, t_data **list)
+{
+	int	i;
 
 	i = 1;
-	while (rec_list[i])
-	{
-		temp = ft_atoi_mod(rec_list[i]);
-		if (temp > INT_MAX || temp < INT_MIN)
-			if_error(stack);
-		new_node = ft_new_node(temp);
-		ft_add_back(stack, new_node);
-		i++;
-	}
+	if(*list == NULL)
+		*list = add_node_value((ft_atoi_mod(argv[i])), 1);
+	while(++i < argc)
+		add_next_node(list, (ft_atoi_mod(argv[i])), 1);
+
+	// print_list_test(list);
 }
 
-//inicia ambos os stacks como NULL
-void	init_stack(t_stack *stack)
+//iniciar o programa
+void	start_push(int argc, char **argv)
 {
-	stack->first = NULL;
-	stack->last = NULL;
-	stack->size = 0;
+	t_data	**temp;
+	
+	temp = (t_data **)ft_calloc(1, sizeof(t_data *));
+	if (!temp) 
+		error_simple();
+	init_list(argc, argv, temp);
+	start_stack(temp);
+	ft_free_list(temp);
 }
 
-
-//iniciar as stacks A e B com NULL e size = 0
-void	start_push(char **argv)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	stack_a = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack_a)
-		error_simple();
-	init_stack(stack_a);
-	fill_stack(stack_a, argv);
-	stack_b = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack_a)
-		error_simple();
-	init_stack(stack_b);
-	ft_print_stack(stack_a);
-	ft_free(stack_a);
-	ft_free(stack_b);
-	// check_stack(stack_a);
-}
