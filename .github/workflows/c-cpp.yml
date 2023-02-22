@@ -33,4 +33,4 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install norminette
-        make norm
+        make norm_CI
