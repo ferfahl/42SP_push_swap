@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   02_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 20:46:26 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:08:43 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,19 @@ int	check_int(char **argv)
 	return (1);
 }
 
-
 //checa se a lista ja esta ordenada
-t_bool check_sorted(t_data *list)
+t_bool	check_sorted(t_data *list)
 {
 	while (list->next != NULL)
 	{
 		if (list->index > list->next->index)
 			return (FALSE);
 		if (!list->next)
-			break;
+			break ;
 		list = list->next;
 	}
 	return (TRUE);
 }
-
 
 // // verificar se está ordenado
 // void    check_stack(t_stack *stack)
