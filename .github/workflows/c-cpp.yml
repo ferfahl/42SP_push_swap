@@ -26,7 +26,7 @@ jobs:
           echo 'OK'
         else
           echo 'FAILED'
-          exit(1)
+          exit 1
         fi
 
     - name: make norm
