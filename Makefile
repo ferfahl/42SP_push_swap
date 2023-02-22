@@ -142,3 +142,16 @@ git:
 norm:
 		clear
 		@norminette ${addprefix ${MANDATORY_PATH}/, ${MANDATORY_FILES}} | grep -v "OK!" || echo "All files ok!"
+
+norm_CI:
+		norminette ${addprefix ${MANDATORY_PATH}/, ${MANDATORY_FILES}}
+		value=`norminette ${addprefix ${MANDATORY_PATH}/, ${MANDATORY_FILES}} | grep "Error:" | wc -l | tr -s " "`
+		if [[ $value != '0']]; then
+			echo "FAILED"
+			exit 1
+		else
+			echo "All files OK"
+		fi
+
+
+
