@@ -13,14 +13,11 @@ jobs:
 
     steps:
     - name: configure environment
-    - uses: actions/checkout@v3
       run: sudo apt install python3 gcc -y
     - name: make
-    - uses: actions/checkout@v3
       run: make
     - name: make recompile
-    - uses: actions/checkout@v3
-    - run: |
+      run: |
         make
         value=`make | wc -l | tr -s " "`
         if [[ $value == ' 1' ]]; then
@@ -31,7 +28,6 @@ jobs:
         fi
 
     - name: make norm
-    - uses: actions/checkout@v3
       run: |
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install norminette
