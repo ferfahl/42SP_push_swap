@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/20 19:50:22 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:34:23 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ void	ft_free_stack(t_stack *stack)
 
 void	ft_free_list(t_data **list)
 {
-	int	index;
+	t_data	*aux;
 
-	index = 0;
-	while (list[index])
+	while (*list)
 	{
-		free(list[index]);
-		index++;
+		aux = *list;
+		ft_printf("%d\n", (*list)->index);
+		(*list) = (*list)->next;
+		free (aux);
 	}
-	free(list);
+	free (list);
 }
 
 //função para limpar algum tipo de arquivo

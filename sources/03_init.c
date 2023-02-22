@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:07:36 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:25:59 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ void	start_push(int argc, char **argv)
 	init_list(argc, argv, temp);
 	if (check_sorted(*temp))
 		success_exit(temp);
-	start_stack(temp);
-	ft_free_list(temp);
+	// start_stack(temp);
+	// ft_free_list(temp);
 }
