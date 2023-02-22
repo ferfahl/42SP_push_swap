@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: configure environment 
+    - name: configure environment
+    - uses: actions/checkout@v3
       run: sudo apt install python3 gcc -y
     - name: make
+    - uses: actions/checkout@v3
       run: make
     - name: make recompile
     - uses: actions/checkout@v3
@@ -27,9 +29,10 @@ jobs:
           echo 'FAILED'
           exit(1)
         fi
-      
+
     - name: make norm
-      run: | 
+    - uses: actions/checkout@v3
+      run: |
         python3 -m pip install --upgrade pip setuptools
         python3 -m pip install norminette
         make norm
