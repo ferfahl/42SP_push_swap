@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:52:08 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:26:45 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:16:43 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void	ft_clear_node(t_node *node)
 }
 
 // retorna sucesso
+	// print_list_test(temp);
 void	success_exit(void *temp)
 {
-	// print_list_test(temp);
 	ft_free_list(temp);
 	exit (0);
 }

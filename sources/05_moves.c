@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   05_moves.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:15:33 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:16:17 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ void	push(t_stack *source, t_stack *dest)
 	if (!source->first)
 		return ;
 	ft_add_front(dest, source->first);
-//	ft_remove_front(&source);
 }
+//	ft_remove_front(&source);
 
 // (sa, sb) swap: trocar os dois primeiros elementos do topo de uma pilha
-void	swap(t_stack *stack)
-{
 	// if (!stack->first || !stack->first->next)
 	// 	return ;
-    (void)stack;
+void	swap(t_stack *stack)
+{
+	(void)stack;
+}
 	// ft_swap(&stack->first->data, &stack->first->next->data);
 //	ft_print_move(NULL);
-}
 
 // (ra, rb) rotate: mover o elemento do topo para o final da pilha
 void	ft_rotate(t_stack *stack)
