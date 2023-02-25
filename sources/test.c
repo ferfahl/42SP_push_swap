@@ -3,33 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:09:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/22 17:41:34 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:58:08 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_stack(t_stack *stack_a)
+void	ft_print_stack(t_stack *stack)
 {
 	t_node	*aux;
 
-	aux = stack_a->first;
+	aux = stack->first;
 	ft_printf("first->last\n");
 	while (aux)
 	{
 		ft_printf("%d ", aux->data);
 		aux = aux->next;
 	}
-	aux = stack_a->last;
+	aux = stack->last;
 	ft_printf("\n");
 	ft_printf("last->first\n");
 	while (aux)
 	{
 		ft_printf("%d ", aux->data);
 		aux = aux->prev;
+	}
+	ft_printf("\n");
+}
+
+void	ft_print_stack_simple(t_stack *stack)
+{
+	t_node	*aux;
+
+	aux = stack->first;
+	ft_printf("first->last\n");
+	while (aux)
+	{
+		ft_printf("%d ", aux->data);
+		aux = aux->next;
 	}
 	ft_printf("\n");
 }

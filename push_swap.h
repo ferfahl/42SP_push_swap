@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:22:52 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:58:23 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ typedef struct stack
 // Functions
 // checking functions
 int check_int(char **argv);
-void ft_print_stack(t_stack *stack_a);
+void ft_print_stack(t_stack *stack);
+void	ft_print_stack_simple(t_stack *stack);
 void print_list_test(t_data **list);
 t_bool check_sorted(t_data *list);
 

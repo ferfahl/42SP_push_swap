@@ -6,8 +6,13 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:52:04 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 12:53:31 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:57:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	moves_like(t_stack *stack)
+{
+	ft_rotate(stack);
+}
