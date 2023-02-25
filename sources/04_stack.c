@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 13:00:44 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:50:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,9 @@ void	start_stack(t_data **list)
 		error_simple();
 	init_stack(stack_a);
 	fill_stack(stack_a, *list);
+	ft_free_list(list);
 	init_stack(stack_b);
-	(stack_a);
+	ft_moves_like(stack_a);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 }

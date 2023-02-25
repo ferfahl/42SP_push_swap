@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   05_moves.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/22 16:16:17 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:14:25 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	swap(t_stack *stack)
 //	ft_print_move(NULL);
 
 // (ra, rb) rotate: mover o elemento do topo para o final da pilha
-void	ft_rotate(t_stack *stack)
+void	ft_rotate(t_stack *stack, char a_or_b)
 {
 	t_node	*temp;
 
@@ -42,10 +42,14 @@ void	ft_rotate(t_stack *stack)
 	stack->first = stack->first->next;
 	stack->last->next = temp;
 	ft_add_back(stack, temp);
+	if (a_or_b == 'a')
+		ft_putstr_fd("ra\n", 2);
+	else if (a_or_b == 'b')
+		ft_putstr_fd("rb\n", 2);
 }
 
 // (rra, rrb) reverse rotate: mover o elemento do final da pilha para o topo
-void	ft_reverse_rotate(t_stack *stack)
+void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 {
 	t_node	*temp;
 
@@ -55,4 +59,8 @@ void	ft_reverse_rotate(t_stack *stack)
 	stack->last = stack->last->prev;
 	stack->last->next = NULL;
 	ft_add_front(stack, temp);
+	if (a_or_b == 'a')
+		ft_putstr_fd("rra\n", 2);
+	else if (a_or_b == 'b')
+		ft_putstr_fd("rrb\n", 2);
 }
