@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:34:23 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/25 12:54:05 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	ft_free_list(t_data **list)
 	while (*list)
 	{
 		aux = *list;
-		ft_printf("%d\n", (*list)->index);
 		(*list) = (*list)->next;
 		free (aux);
 	}
