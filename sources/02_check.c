@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 21:08:43 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/25 19:02:38 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,16 @@ int	check_int(char **argv)
 //checa se a lista ja esta ordenada
 t_bool	check_sorted(t_data *list)
 {
-	while (list->next != NULL)
+	t_data	*temp;
+
+	temp = list;
+	while (temp->next != NULL)
 	{
-		if (list->index > list->next->index)
+		if (temp->index > temp->next->index)
 			return (FALSE);
-		if (!list->next)
+		if (!temp->next)
 			break ;
-		list = list->next;
+		temp = temp->next;
 	}
 	return (TRUE);
 }
