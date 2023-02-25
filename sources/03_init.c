@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/22 16:15:08 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/25 05:32:57 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ void	start_push(int argc, char **argv)
 	init_list(argc, argv, temp);
 	if (check_sorted(*temp))
 		success_exit(temp);
+	start_stack(temp);
 }
-	// start_stack(temp);
 	// ft_free_list(temp);
