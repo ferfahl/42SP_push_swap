@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 18:23:30 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 02:59:30 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 03:13:35 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,3 @@ void	ft_double_swap(t_stack *stack_a, t_stack *stack_b)
 	ft_swap(stack_b, 'c');
 	ft_putstr_fd("ss\n", 2);
 }
-
