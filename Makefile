@@ -113,6 +113,7 @@ $(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
 mem:
 		$(VAL) ./$(NAME) "42" "598" "1" "-987" "411"
 
+
 #make clean -> remove objects
 clean:
 		@make clean -C $(LIBFT_PATH) --no-print-directory

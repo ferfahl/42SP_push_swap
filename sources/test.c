@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:09:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:51:45 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 02:18:48 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ void	ft_print_stack(t_stack *stack)
 *@param stack the stack to be printed
 *@return none
 */
-void	ft_print_stack_simple(t_stack *stack)
+void	ft_print_stack_simple(t_stack *stack, char a_or_b)
 {
 	t_node	*aux;
 
 	aux = stack->first;
-	ft_printf("stack a\n");
+	ft_printf("stack %c\n", a_or_b);
 	while (aux)
 	{
 		ft_printf("%d ", aux->data);

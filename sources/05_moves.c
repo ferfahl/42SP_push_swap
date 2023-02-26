@@ -6,29 +6,79 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:46:11 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 03:11:27 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // (pa, pb) push: mover o elemento do topo de uma pilha para a outra
-void	push(t_stack *source, t_stack *dest)
+/**
+*@brief push the first element of the stack to the other stack
+*@param source the stack to be pushed
+*@param dest the stack to receive the element
+*@param a_or_b the name of the stack to be pushed
+*@return none
+*/
+void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 {
+	t_node	*temp;
+
 	if (!source->first)
 		return ;
+	temp = source->first->next;
+	temp->prev = NULL;
 	ft_add_front(dest, source->first);
+	source->first = temp;
+	source->size -= 1;
+	if (a_or_b == 'a')
+		ft_putstr_fd("pa\n", 2);
+	else if (a_or_b == 'b')
+		ft_putstr_fd("pb\n", 2);
 }
-//	ft_remove_front(&source);
 
-// (sa, sb) swap: trocar os dois primeiros elementos do topo de uma pilha
-	// if (!stack->first || !stack->first->next)
-	// 	return ;
-void	swap(t_stack *stack)
+/**
+*@brief swaps the first two elements of the stack
+*@param stack the stack to be swapped
+*@param a_or_b the name of the stack to be swapped
+*@return none
+*/
+void	ft_swap(t_stack *stack, char a_or_b)
 {
-	(void)stack;
+	t_node	*temp;
+	t_node	*aux;
+
+	if (!stack->first || !stack->last || stack->size == 1)
+		return ;
+	temp = stack->first;
+	aux = stack->first->next;
+	if (!aux)
+		return ;
+	temp->next = aux->next;
+	aux->next = temp;
+	stack->first = aux;
+	if (a_or_b == 'a')
+		ft_putstr_fd("sa\n", 2);
+	else if (a_or_b == 'b')
+		ft_putstr_fd("sb\n", 2);
 }
-	// ft_swap(&stack->first->data, &stack->first->next->data);
+
+// it's giving segfault :(
+	// t_node	*temp;
+
+	// if (!stack->first || !stack->last || stack->size == 1)
+	// 	return ;
+	// temp = stack->first;
+	// stack->first = stack->first->next;
+	// temp->next = stack->first->next;
+	// temp->prev = stack->first;
+	// stack->first->next = temp;
+	// stack->first->prev = NULL;
+	// temp->next->prev = temp;
+	// if (a_or_b == 'a')
+	// 	ft_putstr_fd("sa\n", 2);
+	// else if (a_or_b == 'b')
+	// 	ft_putstr_fd("sb\n", 2);
 
 /**
 *@brief rotate: moves the top element to the end of the stack
@@ -40,7 +90,7 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 {
 	t_node	*temp;
 
-	if (!stack->first || !stack->last)
+	if (!stack->first || !stack->last || stack->size == 1)
 		return ;
 	temp = stack->first;
 	stack->first = stack->first->next;
@@ -62,7 +112,7 @@ void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 {
 	t_node	*temp;
 
-	if (!stack->first || !stack->last)
+	if (!stack->first || !stack->last || stack->size == 1)
 		return ;
 	temp = stack->last;
 	stack->last = stack->last->prev;

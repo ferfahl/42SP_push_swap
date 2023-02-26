@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:54:15 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 02:34:06 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_add_first(t_stack *stack, t_node *new)
 {
 	stack->first = new;
 	stack->last = new;
+	stack->size += 1;
+	new->next = NULL;
 }
 
 /**
@@ -57,6 +59,7 @@ void	ft_add_back(t_stack *stack, t_node *new)
 		new->next = NULL;
 		new->prev = stack->last;
 		stack->last = new;
+		stack->size += 1;
 	}
 }
 
@@ -76,6 +79,7 @@ void	ft_add_front(t_stack *stack, t_node *new)
 		new->next = stack->first;
 		new->prev = NULL;
 		stack->first = new;
+		stack->size += 1;
 	}
 }
 
@@ -93,6 +97,7 @@ void	ft_remove_front(t_stack *stack)
 		temp = stack->first;
 		stack->first = stack->first->next;
 		stack->first->prev = NULL;
+		stack->size -= 1;
 		free(temp);
 	}
 }

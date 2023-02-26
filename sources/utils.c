@@ -6,26 +6,33 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:52:08 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:55:27 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 02:25:51 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	ft_swap(int *a, int *b)
-// {
-// 	int temp;
+/**
+*@brief push the first element of the stack a to the stack b
+*@param stack_a the stack to be pushed
+*@param stack_b the stack to receive the element
+*@return none
+*/
+void	ft_pa(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_push(stack_b, stack_a, 'a');
+}
 
-// 	temp = *a;
-// 	*a = *b;
-// 	*b = temp;
-// }
-
-// // void	ft_print_moves(char *move)
-// // {
-// // 	if (move = )
-// // 	ft_putstr_fd(move, 1);
-// // }
+/**
+*@brief push the first element of the stack b to the stack a
+*@param stack_a the stack to receive the element
+*@param stack_b the stack to be pushed
+*@return none
+*/
+void	ft_pb(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_push(stack_a, stack_b, 'b');
+}
 
 /**
 *@brief clear values of the node
