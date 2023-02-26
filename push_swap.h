@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:43:15 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:52:28 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_add_front(t_stack *stack, t_node *new);
 void	ft_swap_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_pa(t_stack *stack_a, t_stack *stack_b);
 void	ft_pb(t_stack *stack_a, t_stack *stack_b);
-void	push(t_stack *source, t_stack *dest, char a_or_b);
+void	ft_push(t_stack *source, t_stack *dest, char a_or_b);
 
 // testing moves
 void	ft_moves_like(t_stack *stack_a, t_stack *stack_b);

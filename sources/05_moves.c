@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:40:28 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:52:59 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 void	ft_pa(t_stack *stack_a, t_stack *stack_b)
 {
-	push(stack_b, stack_a, 'a');
+	ft_push(stack_b, stack_a, 'a');
 }
 
 void	ft_pb(t_stack *stack_a, t_stack *stack_b)
 {
-	push(stack_a, stack_b, 'b');
+	ft_push(stack_a, stack_b, 'b');
 }
 
 // (sa, sb) swap: trocar os dois primeiros elementos do topo de uma pilha
