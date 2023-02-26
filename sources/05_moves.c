@@ -3,30 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   05_moves.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 19:14:25 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:40:28 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // (pa, pb) push: mover o elemento do topo de uma pilha para a outra
-void	push(t_stack *source, t_stack *dest)
-{
-	if (!source->first)
-		return ;
-	ft_add_front(dest, source->first);
-}
+
 //	ft_remove_front(&source);
 
-// (sa, sb) swap: trocar os dois primeiros elementos do topo de uma pilha
-	// if (!stack->first || !stack->first->next)
-	// 	return ;
-void	swap(t_stack *stack)
+void	ft_pa(t_stack *stack_a, t_stack *stack_b)
 {
-	(void)stack;
+	push(stack_b, stack_a, 'a');
+}
+
+void	ft_pb(t_stack *stack_a, t_stack *stack_b)
+{
+	push(stack_a, stack_b, 'b');
+}
+
+// (sa, sb) swap: trocar os dois primeiros elementos do topo de uma pilha
+
+void	ft_swap(t_stack *stack, char a_or_b)
+{
+	t_node	*temp;
+
+	if (!stack->first || !stack->first->next)
+		return ;
+	temp = stack->first;
+	stack->first = stack->first->next;
+	temp->next = stack->first->next;
+	temp->prev = stack->first;
+	stack->first->next = temp;
+	stack->first->prev = NULL;
+	temp->next->prev = temp;
+	if (a_or_b == 'a')
+		ft_putstr_fd("sa\n", 2);
+	else if (a_or_b == 'b')
+		ft_putstr_fd("sb\n", 2);
 }
 	// ft_swap(&stack->first->data, &stack->first->next->data);
 //	ft_print_move(NULL);

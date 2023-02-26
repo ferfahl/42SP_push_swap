@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 20:09:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 18:55:38 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/25 23:09:07 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void	ft_print_stack(t_stack *stack)
 	ft_printf("\n");
 }
 
-void	ft_print_stack_simple(t_stack *stack)
+void	ft_print_stack_simple(t_stack *stack, char a_or_b)
 {
 	t_node	*aux;
 
 	aux = stack->first;
-	ft_printf("stack a\n");
+	ft_printf("stack %c\n", a_or_b);
 	while (aux)
 	{
 		ft_printf("%d ", aux->data);
