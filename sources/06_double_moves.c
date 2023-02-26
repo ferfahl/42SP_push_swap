@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 18:23:30 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:40:10 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:47:04 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_swap_ss(t_stack *stack_a, t_stack *stack_b)
 	ft_putstr_fd("ss\n", 2);
 }
 
-void	push(t_stack *source, t_stack *dest, char a_or_b)
+void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 {
 	t_node	*temp;
 
