@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 19:14:42 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 00:56:57 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,14 @@ void	start_stack(t_data **list);
 void	ft_swap(int *a, int *b);
 void	ft_rotate(t_stack *stack, char a_or_b);
 void	ft_reverse_rotate(t_stack *stack, char a_or_b);
+void	ft_double_rotate(t_stack *stack_a, t_stack *stack_b);
+void	ft_double_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
+
+// Utils for moving
 void	ft_add_back(t_stack *stack, t_node *new);
 void	ft_add_front(t_stack *stack, t_node *new);
 
-// testing moves
+// Testing moves
 void	ft_moves_like(t_stack *stack);
 
 // Error functions

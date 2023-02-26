@@ -6,13 +6,17 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 19:02:38 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:39:26 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//verificar se os valores são inteiros
+/**
+*@brief checks if the arguments are numbers
+*@param argv the arguments
+*@return 1 if true, exits if false
+*/
 int	check_int(char **argv)
 {
 	int	i;
@@ -37,7 +41,11 @@ int	check_int(char **argv)
 	return (1);
 }
 
-//checa se a lista ja esta ordenada
+/**
+*@brief checks if the list is sorted
+*@param list the list to be checked
+*@return TRUE or FALSE
+*/
 t_bool	check_sorted(t_data *list)
 {
 	t_data	*temp;
@@ -54,14 +62,23 @@ t_bool	check_sorted(t_data *list)
 	return (TRUE);
 }
 
-// // verificar se está ordenado
-// void    check_stack(t_stack *stack)
-// {
-//     t_node *temp;
+/**
+*@brief check if stack is sorted
+*@param stack the stack to be checked
+*@return TRUE or FALSE
+*/
+t_bool	check_stack(t_stack **stack)
+{
+	t_node	*temp;
 
-//     while(stack->first)
-//     {
-//         temp = stack->first->data;
-
-//     }
-// }
+	temp = (*stack)->first;
+	while (temp)
+	{
+		if (temp->data > temp->next->data)
+			return (FALSE);
+		if (!temp->next)
+			break ;
+		temp = temp->next;
+	}
+	return (TRUE);
+}
