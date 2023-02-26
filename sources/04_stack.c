@@ -6,13 +6,18 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 22:47:55 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:44:35 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//adicionar os valores recebidos separados no stack A
+/**
+*@brief adds the values received in list separated in stack
+*@param stack the stack to be filled
+*@param list the list with the values to be added
+*@return none
+*/
 void	fill_stack(t_stack *stack, t_data *list)
 {
 	int			temp;
@@ -28,7 +33,11 @@ void	fill_stack(t_stack *stack, t_data *list)
 	}
 }
 
-//inicia ambos os stacks como NULL
+/**
+*@brief initializes the stack with NULL value
+*@param stack the stack to be initialized
+*@return none
+*/
 void	init_stack(t_stack *stack)
 {
 	stack->first = NULL;
@@ -36,7 +45,11 @@ void	init_stack(t_stack *stack)
 	stack->size = 0;
 }
 
-//inicia as stacks
+/**
+*@brief initializes the stacks and calls the functions to fill the stacks
+*@param list the list with the values to be added
+*@return none
+*/
 void	start_stack(t_data **list)
 {
 	t_stack	*stack_a;
@@ -56,7 +69,8 @@ void	start_stack(t_data **list)
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 }
-	// check_stack(stack_a);
+
+// check_stack(stack_a);
 
 // função
 // 	verifica stack_a < 5
@@ -66,7 +80,3 @@ void	start_stack(t_data **list)
 // 	enquanto stack_a > 5
 // 		o negocio dos 30%
 // 	fazer um sort especifico nosso pra 5
-
-//verificar se o stack A está ordenado
-//se estiver ordenado, não precisa fazer nada
-//se não estiver ordenado, chama o algoritmo escolhido

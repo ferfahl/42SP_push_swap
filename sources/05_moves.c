@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 00:47:28 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:46:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,13 @@ void	swap(t_stack *stack)
 	(void)stack;
 }
 	// ft_swap(&stack->first->data, &stack->first->next->data);
-//	ft_print_move(NULL);
 
-// (ra, rb) rotate: mover o elemento do topo para o final da pilha
+/**
+*@brief rotate: moves the top element to the end of the stack
+*@param stack the stack to be rotated
+*@param a_or_b the name of the stack to be rotated
+*@return none
+*/
 void	ft_rotate(t_stack *stack, char a_or_b)
 {
 	t_node	*temp;
@@ -48,7 +52,12 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 		ft_putstr_fd("rb\n", 2);
 }
 
-// (rra, rrb) reverse rotate: mover o elemento do final da pilha para o topo
+/**
+*@brief reverse rotate: moves the last element to the top of the stack
+*@param stack the stack to be rotated
+*@param a_or_b the name of the stack to be rotated
+*@return none
+*/
 void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 {
 	t_node	*temp;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:52:08 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/22 16:16:43 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:55:27 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@
 // // 	ft_putstr_fd(move, 1);
 // // }
 
+/**
+*@brief clear values of the node
+*@param node the node to be cleared
+*@return none
+*/
 void	ft_clear_node(t_node *node)
 {
 	t_node	*aux;
@@ -43,8 +48,11 @@ void	ft_clear_node(t_node *node)
 	}
 }
 
-// retorna sucesso
-	// print_list_test(temp);
+/**
+*@brief returns if the stack is sorted
+*@param temp the list to be cleared
+*@return none
+*/
 void	success_exit(void *temp)
 {
 	ft_free_list(temp);
