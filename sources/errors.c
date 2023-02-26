@@ -6,12 +6,17 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 20:51:22 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:49:37 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+*@brief frees the stack
+*@param stack the stack to be freed
+*@return none
+*/
 void	ft_free_stack(t_stack *stack)
 {
 	if (stack == NULL)
@@ -23,6 +28,11 @@ void	ft_free_stack(t_stack *stack)
 	stack = NULL;
 }
 
+/**
+*@brief frees the list
+*@param list the list to be freed
+*@return none
+*/
 void	ft_free_list(t_data **list)
 {
 	t_data	*aux;
@@ -36,7 +46,12 @@ void	ft_free_list(t_data **list)
 	free (list);
 }
 
-//função para limpar algum tipo de arquivo
+/**
+*@brief if error, prints the error message and frees the stack or list
+*@param data the stack or list to be freed
+*@param a the type of data to be freed
+*@return none
+*/
 void	if_error(void *data, char a)
 {
 	ft_putstr_fd("Error\n", 2);
@@ -47,6 +62,11 @@ void	if_error(void *data, char a)
 	exit (1);
 }
 
+/**
+*@brief if error and no data to be freed, prints the error message
+*@param void
+*@return none
+*/
 void	error_simple(void)
 {
 	ft_putstr_fd("Error\n", 2);

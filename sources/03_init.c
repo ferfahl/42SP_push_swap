@@ -6,13 +6,18 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 20:52:06 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:33:11 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// adiciona um nó no final da lista
+/**
+*@brief adds a node at the end of the list
+*@param number the argv number after being converted to long int
+*@param i the index of the number
+*@return the new node created
+*/
 t_data	*add_node_value(long int number, int i)
 {
 	t_data	*new_node;
@@ -26,9 +31,15 @@ t_data	*add_node_value(long int number, int i)
 	return (new_node);
 }
 
-// verifica se o número já existe na lista
-// se não existir, adiciona o nó no final da lista, colocando o index dele de
-// acordo com o valor maior ou menor
+/**
+*@brief verifies if the number already exists in the list, if not, adds the node
+*at the end of the list, putting the index of the node according to the greater
+*or smaller value
+*@param list the list to be checked
+*@param number the argv number after being converted to long int
+*@param i the index of the number
+*@return none
+*/
 void	add_next_node(t_data **list, long int number, int i)
 {
 	t_data	*temp;
@@ -51,7 +62,13 @@ void	add_next_node(t_data **list, long int number, int i)
 	temp->next = add_node_value(number, i);
 }
 
-// cria a lista com os valores passados como argumentos
+/**
+*@brief creates the list with the arguments
+*@param argc the number of arguments
+*@param argv the arguments
+*@param list the list to be created
+*@return none
+*/
 void	init_list(int argc, char **argv, t_data **list)
 {
 	int	i;
@@ -64,7 +81,12 @@ void	init_list(int argc, char **argv, t_data **list)
 }
 // print_list_test(list);
 
-// iniciar o programa
+/**
+*@brief starts the list
+*@param argc the number of arguments
+*@param argv the arguments
+*@return none
+*/
 void	start_push(int argc, char **argv)
 {
 	t_data	**temp;
@@ -77,4 +99,3 @@ void	start_push(int argc, char **argv)
 		success_exit(temp);
 	start_stack(temp);
 }
-	// ft_free_list(temp);

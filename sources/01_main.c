@@ -3,18 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   01_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 18:07:56 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/21 20:45:14 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:23:22 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//checa argumentos não suficientes
-//se for um número, retorna o numero
-//checa demais numeros do argv
+/**
+*@brief checks if there are enough arguments, if there are, checks if they are
+*numbers
+*@param argc the number of arguments
+*@param argv the arguments
+*@return none
+*/
 void	check_args(int argc, char **argv)
 {
 	if (argc <= 1)
@@ -40,8 +44,12 @@ void	check_args(int argc, char **argv)
 	}
 }
 
-//checa argumentos
-//chama o programa
+/**
+*@brief checks args and starts the program
+*@param argc the number of arguments
+*@param argv the arguments
+*@return none
+*/
 int	main(int argc, char *argv[])
 {
 	check_args(argc, argv);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:52:28 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/02/26 02:34:47 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,6 @@ typedef struct stack
 // Functions
 // checking functions
 int		check_int(char **argv);
-void	ft_print_stack(t_stack *stack);
-void	ft_print_stack_simple(t_stack *stack, char a_or_b);
-void	print_list_test(t_data **list);
 t_bool	check_sorted(t_data *list);
 
 // fill list/stack with args
@@ -65,18 +62,31 @@ void	fill_stack(t_stack *stack, t_data *list);
 void	start_stack(t_data **list);
 
 // //Moving functions
-void	ft_swap(t_stack *stack, char a_or_b);
-void	ft_rotate(t_stack *stack, char a_or_b);
-void	ft_reverse_rotate(t_stack *stack, char a_or_b);
-void	ft_add_back(t_stack *stack, t_node *new);
-void	ft_add_front(t_stack *stack, t_node *new);
-void	ft_swap_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_pa(t_stack *stack_a, t_stack *stack_b);
 void	ft_pb(t_stack *stack_a, t_stack *stack_b);
 void	ft_push(t_stack *source, t_stack *dest, char a_or_b);
+void	ft_swap(t_stack *stack, char a_or_b);
+void	ft_rotate(t_stack *stack, char a_or_b);
+void	ft_reverse_rotate(t_stack *stack, char a_or_b);
+void	ft_double_rotate(t_stack *stack_a, t_stack *stack_b);
+void	ft_double_reverse_rotate(t_stack *stack_a, t_stack *stack_b);
+void	ft_double_swap(t_stack *stack_a, t_stack *stack_b);
 
-// testing moves
+// Utils for moving
+void	ft_add_back(t_stack *stack, t_node *new);
+void	ft_add_front(t_stack *stack, t_node *new);
+
+// testing functions
+void	print_list_test(t_data **list);
+void	ft_print_stack(t_stack *stack);
+void	ft_print_stack_simple(t_stack *stack, char a_or_b);
 void	ft_moves_like(t_stack *stack_a, t_stack *stack_b);
+
+// Algorithms -> start
+void	ft_algorithm(t_stack *stack_a, t_stack *stack_b);
+
+// Algorithms -> utils
+int		ft_calculate_lower(t_stack *stack, int size);
 
 // Error functions
 void	error_simple(void);
