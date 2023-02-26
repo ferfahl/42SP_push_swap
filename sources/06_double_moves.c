@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   06_double_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 18:23:30 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/25 20:59:19 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 01:47:04 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,28 @@ void	ft_double_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 	ft_reverse_rotate(stack_a, 'c');
 	ft_reverse_rotate(stack_b, 'c');
 	ft_putstr_fd("rrr\n", 2);
+}
+
+void	ft_swap_ss(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_swap(stack_a, 's');
+	ft_swap(stack_b, 's');
+	ft_putstr_fd("ss\n", 2);
+}
+
+void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
+{
+	t_node	*temp;
+
+	if (!source->first)
+		return ;
+	temp = source->first->next;
+	temp->prev = NULL;
+	ft_add_front(dest, source->first);
+	source->first = temp;
+	source->size -= 1;
+	if (a_or_b == 'a')
+		ft_putstr_fd("pa\n", 2);
+	else if (a_or_b == 'b')
+		ft_putstr_fd("pb\n", 2);
 }
