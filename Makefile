@@ -140,11 +140,6 @@ git:
 		git commit -m "$(m)"
 		git push
 
-git_branch:
-		git add .
-		git commit -m "$(m)"
-		git push --set-upstream origin "$(branch)"
-
 norm:
 		clear
 		@norminette ${addprefix ${MANDATORY_PATH}/, ${MANDATORY_FILES}} | grep -v "OK!" || echo "All files ok!"
