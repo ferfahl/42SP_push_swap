@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:25 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/13 23:23:04 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:41:56 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@
 *needed
 *@return The new list. / NULL if the allocation fails.
 */
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

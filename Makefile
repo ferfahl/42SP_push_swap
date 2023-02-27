@@ -29,10 +29,12 @@ MANDATORY_FILES =	01_main.c \
 					04_stack.c \
 					05_moves.c \
 					06_double_moves.c \
+					07_algorithm.c \
 					errors.c \
 					test.c \
 					utils.c \
 					utils_libft.c \
+					utils_algorithm.c \
 					testing_moves.c \
 
 BONUS_FILES =
@@ -111,7 +113,7 @@ $(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
 
 #make mem -> mcheck
 mem:
-		$(VAL) ./$(NAME) "42" "598" "1" "-987" "411"
+		$(VAL) ./$(NAME) 42 -598 1 -987 411 5 -42
 
 
 #make clean -> remove objects
