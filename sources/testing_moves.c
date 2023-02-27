@@ -81,7 +81,7 @@ void	ft_test_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 void	ft_moves_like(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_test_push(stack_a, stack_b);
-//	ft_test_swap(stack_a, stack_b);
+	ft_test_swap(stack_a, stack_b);
 	ft_test_rotate(stack_a, stack_b);
 	ft_test_reverse_rotate(stack_a, stack_b);
 }

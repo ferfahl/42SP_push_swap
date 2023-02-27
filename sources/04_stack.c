@@ -64,11 +64,11 @@ void	start_stack(t_data **list)
 	fill_stack(stack_a, *list);
 	ft_free_list(list);
 	init_stack(stack_b);
-//	ft_moves_like(stack_a, stack_b);
 	ft_algorithm(stack_a, stack_b);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 }
+//	ft_moves_like(stack_a, stack_b);
 
 // função
 // 	verifica stack_a < 5
