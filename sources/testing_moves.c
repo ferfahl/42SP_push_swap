@@ -39,6 +39,7 @@ void	ft_test_push(t_stack *stack_a, t_stack *stack_b)
 	ft_printf("======================= 2x PB ========================\n");
 	ft_pb(stack_a, stack_b);
 	ft_pb(stack_a, stack_b);
+	ft_pb(stack_a, stack_b);
 	ft_print_stack_simple(stack_a, 'a');
 	ft_print_stack_simple(stack_b, 'b');
 	ft_printf("========================= PA =========================\n");
@@ -80,7 +81,7 @@ void	ft_test_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 void	ft_moves_like(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_test_push(stack_a, stack_b);
-	ft_test_swap(stack_a, stack_b);
+//	ft_test_swap(stack_a, stack_b);
 	ft_test_rotate(stack_a, stack_b);
 	ft_test_reverse_rotate(stack_a, stack_b);
 }
