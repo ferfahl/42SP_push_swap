@@ -21,6 +21,7 @@
 # include "printf/ft_printf.h"
 
 //Struct
+
 typedef struct s_list
 {
 	void			*content;
@@ -28,6 +29,7 @@ typedef struct s_list
 }					t_list;
 
 //Functions
+
 int			ft_atoi(const char *nptr);
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
@@ -64,6 +66,7 @@ int			ft_tolower(int c);
 int			ft_toupper(int c);
 
 //Bonus functions
+
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 t_list		*ft_lstlast(t_list *lst);
@@ -71,6 +74,7 @@ t_list		*ft_lstnew(void *content);
 int			ft_lstsize(t_list *lst);
 
 //Other functions
+
 char		*ft_hex_itoa(unsigned int n);
 char		*ft_pointer_itoa(unsigned long int n);
 char		*ft_uitoa(unsigned int n);

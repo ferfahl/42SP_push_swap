@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:27 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/13 23:22:32 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:41:58 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 *@param content The content to create the node with
 *@return the new node
 */
-
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
