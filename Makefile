@@ -84,12 +84,11 @@ bonus: $(OBJPATH) $(B_NAME)
 
 ##folder for temporary objects
 $(OBJPATH):
-		@mkdir -p $(OBJPATH)
 		@$(LOG) "Creating objects directory..."
+		@mkdir -p $(OBJPATH)
 
 ##make libft
 $(LIBFT):
-		@$(LOG) "Compiling Libft..."
 		@make -C $(LIBFT_PATH) --no-print-directory
 
 ##rule name - make push_swap
