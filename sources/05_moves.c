@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   05_moves.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 03:11:27 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:13:18 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,18 @@ void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 {
 	t_node	*temp;
 
+	temp = NULL;
 	if (!source->first)
 		return ;
-	temp = source->first->next;
-	temp->prev = NULL;
+	if (source->first->next != NULL)
+	{
+		temp = source->first->next;
+		temp->prev = NULL;
+	}
 	ft_add_front(dest, source->first);
 	source->first = temp;
 	source->size -= 1;
+	dest->size += 1;
 	if (a_or_b == 'a')
 		ft_putstr_fd("pa\n", 2);
 	else if (a_or_b == 'b')
@@ -55,8 +60,11 @@ void	ft_swap(t_stack *stack, char a_or_b)
 	if (!aux)
 		return ;
 	temp->next = aux->next;
+	temp->prev = aux;
+	aux->prev = NULL;
 	aux->next = temp;
 	stack->first = aux;
+	temp->next->prev = temp;
 	if (a_or_b == 'a')
 		ft_putstr_fd("sa\n", 2);
 	else if (a_or_b == 'b')
@@ -96,6 +104,7 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 	stack->first = stack->first->next;
 	stack->last->next = temp;
 	ft_add_back(stack, temp);
+	stack->size--;
 	if (a_or_b == 'a')
 		ft_putstr_fd("ra\n", 2);
 	else if (a_or_b == 'b')

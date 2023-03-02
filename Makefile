@@ -29,6 +29,7 @@ MANDATORY_FILES =	01_main.c \
 					04_stack.c \
 					05_moves.c \
 					06_double_moves.c \
+					08_5numbers.c \
 					errors.c \
 					test.c \
 					utils.c \
