@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:05:28 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/15 22:33:18 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:37:00 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 /**
 *@brief converts the initial portion of the string pointed to by nptr to int
 *@param nptr Pointer to the area of memory of the string
-*@return int the converted value or 0 on error
+*@return long int the converted value or 0 on error
 */
-
 long int	ft_atoi_mod(char *nptr)
 {
 	long int	count;

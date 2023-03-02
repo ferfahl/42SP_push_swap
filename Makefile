@@ -29,11 +29,13 @@ MANDATORY_FILES =	01_main.c \
 					04_stack.c \
 					05_moves.c \
 					06_double_moves.c \
+					07_algorithm.c \
 					08_5numbers.c \
 					errors.c \
 					test.c \
 					utils.c \
 					utils_libft.c \
+					utils_algorithm.c \
 					testing_moves.c \
 
 BONUS_FILES =
@@ -83,12 +85,11 @@ bonus: $(OBJPATH) $(B_NAME)
 
 ##folder for temporary objects
 $(OBJPATH):
-		@mkdir -p $(OBJPATH)
 		@$(LOG) "Creating objects directory..."
+		@mkdir -p $(OBJPATH)
 
 ##make libft
 $(LIBFT):
-		@$(LOG) "Compiling Libft..."
 		@make -C $(LIBFT_PATH) --no-print-directory
 
 ##rule name - make push_swap
@@ -112,7 +113,7 @@ $(OBJPATH)/%.o: $(BONUS_PATH)/%.c $(HEADER)
 
 #make mem -> mcheck
 mem:
-		$(VAL) ./$(NAME) "42" "598" "1" "-987" "411"
+		$(VAL) ./$(NAME) 42 -598 1 -987 411 5 -42
 
 
 #make clean -> remove objects

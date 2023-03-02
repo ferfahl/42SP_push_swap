@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 00:05:28 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/10 19:52:36 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:23:33 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 *@param nptr Pointer to the area of memory of the string
 *@return int the converted value or 0 on error
 */
-
 int	ft_atoi(const char *nptr)
 {
 	int	count;

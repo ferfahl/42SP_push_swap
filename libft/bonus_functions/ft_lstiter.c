@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:19 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/13 23:25:15 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:41:51 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@
 the list
 *@return none
 */
-
 void	ft_lstiter(t_list *lst, void (*f)(void *));

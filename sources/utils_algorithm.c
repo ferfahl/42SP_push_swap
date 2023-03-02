@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:32:05 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:18:04 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 20:26:06 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,21 @@
 */
 int	ft_calculate_lower(t_stack *stack, int size)
 {
-	t_stack	*temp;
+	t_node	*temp;
 	int		count;
 	int		start;
 	int		result;
 
-	temp = stack;
+	temp = stack->first;
 	count = 0;
 	start = temp->data;
 	while (temp)
 	{
-		if (stack < temp->next->data)
-			count++;
+		if (!temp->next)
+			break ;
 		temp = temp->next;
+		if (start > temp->data)
+			count++;
 	}
 	result = (100 * count) / size;
 	return (result);

@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 22:13:18 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:42:32 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,6 @@ void	ft_swap(t_stack *stack, char a_or_b)
 		ft_putstr_fd("sb\n", 2);
 }
 
-// it's giving segfault :(
-	// t_node	*temp;
-
-	// if (!stack->first || !stack->last || stack->size == 1)
-	// 	return ;
-	// temp = stack->first;
-	// stack->first = stack->first->next;
-	// temp->next = stack->first->next;
-	// temp->prev = stack->first;
-	// stack->first->next = temp;
-	// stack->first->prev = NULL;
-	// temp->next->prev = temp;
-	// if (a_or_b == 'a')
-	// 	ft_putstr_fd("sa\n", 2);
-	// else if (a_or_b == 'b')
-	// 	ft_putstr_fd("sb\n", 2);
-
 /**
 *@brief rotate: moves the top element to the end of the stack
 *@param stack the stack to be rotated
@@ -103,6 +86,7 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 	temp = stack->first;
 	stack->first = stack->first->next;
 	stack->last->next = temp;
+	stack->size--;
 	ft_add_back(stack, temp);
 	stack->size--;
 	if (a_or_b == 'a')
@@ -126,6 +110,7 @@ void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 	temp = stack->last;
 	stack->last = stack->last->prev;
 	stack->last->next = NULL;
+	stack->size--;
 	ft_add_front(stack, temp);
 	if (a_or_b == 'a')
 		ft_putstr_fd("rra\n", 2);

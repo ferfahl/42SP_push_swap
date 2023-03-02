@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 02:16:31 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 21:01:31 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,11 @@ void	start_stack(t_data **list)
 	fill_stack(stack_a, *list);
 	ft_free_list(list);
 	init_stack(stack_b);
-	ft_moves_like(stack_a, stack_b);
+	ft_algorithm(stack_a, stack_b);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 }
-
-// check_stack(stack_a);
+//	ft_moves_like(stack_a, stack_b);
 
 // função
 // 	verifica stack_a < 5

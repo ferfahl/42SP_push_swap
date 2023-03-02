@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 01:38:50 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/02 00:01:14 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:46:03 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 
 //Functions
+
 int	ft_print_char(va_list args);
 int	ft_print_hexadecimal(va_list args, char placeholder);
 int	ft_print_integer(va_list args);

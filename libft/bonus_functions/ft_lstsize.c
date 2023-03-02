@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:44:30 by feralves          #+#    #+#             */
-/*   Updated: 2022/10/13 23:24:00 by feralves         ###   ########.fr       */
+/*   Updated: 2023/02/26 19:42:00 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 *@param lst: The beginning of the list
 *@return The length of the list
 */
-
 int	ft_lstsize(t_list *lst)
 {
 	int	count;
