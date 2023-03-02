@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 22:42:32 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:23:43 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 	ft_add_front(dest, source->first);
 	source->first = temp;
 	source->size -= 1;
-	dest->size += 1;
 	if (a_or_b == 'a')
 		ft_putstr_fd("pa\n", 2);
 	else if (a_or_b == 'b')
@@ -88,7 +87,6 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 	stack->last->next = temp;
 	stack->size--;
 	ft_add_back(stack, temp);
-	stack->size--;
 	if (a_or_b == 'a')
 		ft_putstr_fd("ra\n", 2);
 	else if (a_or_b == 'b')

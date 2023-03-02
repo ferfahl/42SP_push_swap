@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 22:42:39 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:23:51 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void	ft_add_front(t_stack *stack, t_node *new)
 		new->next = stack->first;
 		new->prev = NULL;
 		stack->first = new;
+		stack->size += 1;
 	}
 }
 
