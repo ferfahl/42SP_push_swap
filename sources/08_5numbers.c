@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 08:56:12 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/01 22:36:28 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/01 22:44:46 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,9 @@ void	return_to_a(t_stack *stack_a, t_stack *stack_b)
 
 void	algorithm_to_3(t_stack *stack, char a_or_b)
 {
-	t_node	*temp;
 	int		p_max;
 	int		p_min;
 
-	temp = stack->first;
 	p_max = find_greater_pos(stack);
 	p_min = find_smaller_pos(stack);
 	if (p_max == 1 && p_min == 3)
@@ -107,9 +105,7 @@ void	algorithm_to_5(t_stack *stack_source, t_stack *stack_dest)
 {
 	int	p_max;
 	int	p_min;
-	int	i;
 
-	i = 1;
 	while (stack_source->size > 3)
 	{
 		p_max = find_greater_pos(stack_source);
