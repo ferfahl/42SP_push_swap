@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 08:56:12 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/01 22:44:46 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/01 23:30:28 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	find_smaller_pos(t_stack *stack)
 
 void	return_to_a(t_stack *stack_a, t_stack *stack_b)
 {
-	if (stack_a->size == 5)
+	if (stack_a->size == 5 || stack_b->size == 0)
 		return ;
 	if (stack_b->first->data > stack_a->last->data)
 	{
