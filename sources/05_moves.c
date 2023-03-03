@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 23:23:43 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/03 02:17:06 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 	source->first = temp;
 	source->size -= 1;
 	if (a_or_b == 'a')
-		ft_putstr_fd("pa\n", 2);
+		ft_putstr_fd("pa\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("pb\n", 2);
+		ft_putstr_fd("pb\n", 1);
 }
 
 /**
@@ -65,9 +65,9 @@ void	ft_swap(t_stack *stack, char a_or_b)
 	stack->first = aux;
 	temp->next->prev = temp;
 	if (a_or_b == 'a')
-		ft_putstr_fd("sa\n", 2);
+		ft_putstr_fd("sa\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("sb\n", 2);
+		ft_putstr_fd("sb\n", 1);
 }
 
 /**
@@ -88,9 +88,9 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 	stack->size--;
 	ft_add_back(stack, temp);
 	if (a_or_b == 'a')
-		ft_putstr_fd("ra\n", 2);
+		ft_putstr_fd("ra\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("rb\n", 2);
+		ft_putstr_fd("rb\n", 1);
 }
 
 /**
@@ -111,7 +111,7 @@ void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 	stack->size--;
 	ft_add_front(stack, temp);
 	if (a_or_b == 'a')
-		ft_putstr_fd("rra\n", 2);
+		ft_putstr_fd("rra\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("rrb\n", 2);
+		ft_putstr_fd("rrb\n", 1);
 }

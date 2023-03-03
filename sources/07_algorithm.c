@@ -3,14 +3,43 @@
 /*                                                        :::      ::::::::   */
 /*   07_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:30:50 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 20:40:33 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/03 02:46:35 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+/**
+*@brief counts how many numbers are lower than the first number in the stack and
+*returns the percentage of lower numbers
+*@param stack the stack to be checked
+*@return the percentage of lower numbers
+*/
+int	ft_calculate_lower(t_stack *stack, int size)
+{
+	t_node	*temp;
+	int		count;
+	int		start;
+	int		result;
+
+	temp = stack->first;
+	count = 0;
+	start = temp->data;
+	while (temp)
+	{
+		if (!temp->next)
+			break ;
+		temp = temp->next;
+		if (start > temp->data)
+			count++;
+	}
+	result = (100 * count) / size;
+	return (result);
+}
 
 /**
 *@brief The algorithm that checks if 1/3 of A is lower or not, if it is, push it
@@ -42,8 +71,5 @@ void	ft_algorithm(t_stack *stack_a, t_stack *stack_b)
 			ft_rotate(stack_a, 'a');
 		else if (percentage_a > 33 && percentage_b > 25)
 			ft_double_rotate(stack_a, stack_b);
-		ft_printf("sizes: a: %d b: %d\n", stack_a->size, stack_b->size);
-		ft_print_stack_simple(stack_a, 'a');
-		ft_print_stack_simple(stack_b, 'b');
 	}
 }

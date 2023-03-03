@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:52:04 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 21:26:26 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/03 02:46:23 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,7 @@ void	ft_test_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 
 void	ft_moves_like(t_stack *stack_a, t_stack *stack_b)
 {
-	(void) stack_b;
-	ft_printf("before\n");
-	ft_print_stack_simple(stack_a, 'a');
-	ft_print_stack_simple(stack_b, 'b');
-	ft_printf("after\n");
+	ft_algorithm(stack_a, stack_b);
 	algorithm_to_5(stack_a, stack_b);
-	ft_print_stack_simple(stack_a, 'a');
-	ft_print_stack_simple(stack_b, 'b');
+	returning_all(stack_a, stack_b);
 }
