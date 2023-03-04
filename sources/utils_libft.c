@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:07:12 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 23:23:51 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/04 13:26:10 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_node	*ft_new_node(int number)
 		return (NULL);
 	new_node->data = number;
 	new_node->next = NULL;
+	new_node->prev = NULL;
 	return (new_node);
 }
 
@@ -39,8 +40,9 @@ void	ft_add_first(t_stack *stack, t_node *new)
 {
 	stack->first = new;
 	stack->last = new;
-	stack->size += 1;
+	stack->size++;
 	new->next = NULL;
+	new->prev = NULL;
 }
 
 /**
@@ -59,7 +61,7 @@ void	ft_add_back(t_stack *stack, t_node *new)
 		new->next = NULL;
 		new->prev = stack->last;
 		stack->last = new;
-		stack->size += 1;
+		stack->size++;
 	}
 }
 
@@ -79,7 +81,7 @@ void	ft_add_front(t_stack *stack, t_node *new)
 		new->next = stack->first;
 		new->prev = NULL;
 		stack->first = new;
-		stack->size += 1;
+		stack->size++;
 	}
 }
 
@@ -97,7 +99,7 @@ void	ft_remove_front(t_stack *stack)
 		temp = stack->first;
 		stack->first = stack->first->next;
 		stack->first->prev = NULL;
-		stack->size -= 1;
+		stack->size--;
 		free(temp);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   07_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:30:50 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/03 02:46:35 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/04 14:15:36 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,22 +54,56 @@ void	ft_algorithm(t_stack *stack_a, t_stack *stack_b)
 	int	percentage_a;
 	int	percentage_b;
 
-	percentage_b = 0;
-	while (stack_a->size > 5)
+	percentage_b = 100;
+	while (stack_a->size >= 100)
 	{
 		percentage_a = ft_calculate_lower(stack_a, stack_a->size);
 		if (stack_b->size > 2)
 			percentage_b = ft_calculate_lower(stack_b, stack_b->size);
-		if (percentage_a <= 33 && percentage_b > 25)
+		if (percentage_a <= 33 && percentage_b < 40)
 		{
 			ft_rotate(stack_b, 'b');
 			ft_push(stack_a, stack_b, 'a');
 		}
-		else if (percentage_a <= 33 && percentage_b <= 25)
-			ft_push(stack_a, stack_b, 'a');
-		else if (percentage_a > 33 && percentage_b <= 25)
+		else if (percentage_a <= 33 && percentage_b >= 40)
+			ft_push(stack_a, stack_b, 'b');
+		else if (percentage_a > 33 && percentage_b >= 40)
 			ft_rotate(stack_a, 'a');
-		else if (percentage_a > 33 && percentage_b > 25)
+		else if (percentage_a > 33 && percentage_b < 40)
+			ft_double_rotate(stack_a, stack_b);
+	}  
+	while (stack_a->size >= 50 && stack_a->size < 100)
+	{
+		percentage_a = ft_calculate_lower(stack_a, stack_a->size);
+		if (stack_b->size > 2)
+			percentage_b = ft_calculate_lower(stack_b, stack_b->size);
+		if (percentage_a <= 65 && percentage_b < 40)
+		{
+			ft_rotate(stack_b, 'b');
+			ft_push(stack_a, stack_b, 'a');
+		}
+		else if (percentage_a <= 65 && percentage_b >= 40)
+			ft_push(stack_a, stack_b, 'b');
+		else if (percentage_a > 65 && percentage_b >= 40)
+			ft_rotate(stack_a, 'a');
+		else if (percentage_a > 65 && percentage_b < 40)
+			ft_double_rotate(stack_a, stack_b);
+	}  
+	while (stack_a->size > 5 && stack_a->size < 50)
+	{
+		percentage_a = ft_calculate_lower(stack_a, stack_a->size);
+		if (stack_b->size > 2)
+			percentage_b = ft_calculate_lower(stack_b, stack_b->size);
+		if (percentage_a <= 33 && percentage_b < 50)
+		{
+			ft_rotate(stack_b, 'b');
+			ft_push(stack_a, stack_b, 'a');
+		}
+		else if (percentage_a <= 33 && percentage_b >= 50)
+			ft_push(stack_a, stack_b, 'b');
+		else if (percentage_a > 33 && percentage_b >= 50)
+			ft_rotate(stack_a, 'a');
+		else if (percentage_a > 33 && percentage_b < 50)
 			ft_double_rotate(stack_a, stack_b);
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/03 02:05:02 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/04 10:30:40 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct s_move
 int		check_int(char **argv);
 t_bool	check_sorted(t_data *list);
 t_move	find_position(t_stack *stack, int value);
+// t_bool	check_stack(t_stack *stack);
 
 // fill list/stack with args
 
