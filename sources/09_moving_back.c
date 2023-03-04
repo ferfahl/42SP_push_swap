@@ -6,7 +6,7 @@
 /*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 21:13:45 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/04 14:17:12 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/04 16:15:15 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ void	find_pos(t_stack *stack_a, t_stack *stack_b)
 			else
 				ft_reverse_rotate(stack_a, 'a');
 		}
-		ft_print_stack_simple(stack_a, 'a');
-		ft_print_stack_simple(stack_b, 'b');
+		// ft_print_stack_simple(stack_a, 'a');
+		// ft_print_stack_simple(stack_b, 'b');
 	}
 }
 
@@ -82,7 +82,7 @@ void	returning_all(t_stack *stack_a, t_stack *stack_b)
 			ft_reverse_rotate(stack_a, 'a');
 		pos_min = find_smaller_pos(stack_a);
 	}
-	ft_printf("Final stack_a\n");
-	ft_print_stack_simple(stack_a, 'a');
-	ft_print_stack_simple(stack_b, 'b');
+	// ft_printf("Final stack_a\n");
+	// ft_print_stack_simple(stack_a, 'a');
+	// ft_print_stack_simple(stack_b, 'b');
 }
