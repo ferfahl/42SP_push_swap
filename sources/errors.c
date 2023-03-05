@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 15:42:17 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:49:37 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/03 02:17:53 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_free_list(t_data **list)
 */
 void	if_error(void *data, char a)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Error\n", 1);
 	if (a == 'l')
 		ft_free_list(data);
 	else if (a == 's')
@@ -69,6 +69,6 @@ void	if_error(void *data, char a)
 */
 void	error_simple(void)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Error\n", 1);
 	exit (1);
 }

@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 21:30:51 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 23:27:56 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:52:28 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,18 +64,7 @@ void	start_stack(t_data **list)
 	fill_stack(stack_a, *list);
 	ft_free_list(list);
 	init_stack(stack_b);
-	ft_algorithm(stack_a, stack_b);
 	ft_moves_like(stack_a, stack_b);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 }
-//	ft_moves_like(stack_a, stack_b);
-
-// função
-// 	verifica stack_a < 5
-// 		stack_a -> 2
-// 		stack_a -> 3
-// 		stack_a -> 4
-// 	enquanto stack_a > 5
-// 		o negocio dos 30%
-// 	fazer um sort especifico nosso pra 5

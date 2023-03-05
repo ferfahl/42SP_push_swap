@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   06_double_moves.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 18:23:30 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 03:13:35 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/03 02:17:22 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
-*@brief doube rotate moves the top element to the end of the stack on both 
+*@brief doube rotate moves the top element to the end of the stack on both
 *stacks
 *@param stack_a the first stack to be rotated
 *@param stack_b the second stack to be rotated
@@ -23,7 +23,7 @@ void	ft_double_rotate(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_rotate(stack_a, 'c');
 	ft_rotate(stack_b, 'c');
-	ft_putstr_fd("rr\n", 2);
+	ft_putstr_fd("rr\n", 1);
 }
 
 /**
@@ -37,7 +37,7 @@ void	ft_double_reverse_rotate(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_reverse_rotate(stack_a, 'c');
 	ft_reverse_rotate(stack_b, 'c');
-	ft_putstr_fd("rrr\n", 2);
+	ft_putstr_fd("rrr\n", 1);
 }
 
 /**
@@ -50,5 +50,5 @@ void	ft_double_swap(t_stack *stack_a, t_stack *stack_b)
 {
 	ft_swap(stack_a, 'c');
 	ft_swap(stack_b, 'c');
-	ft_putstr_fd("ss\n", 2);
+	ft_putstr_fd("ss\n", 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   02_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:02:49 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:39:26 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/03 01:59:19 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,21 @@ t_bool	check_sorted(t_data *list)
 *@param stack the stack to be checked
 *@return TRUE or FALSE
 */
-t_bool	check_stack(t_stack **stack)
+t_move	find_position(t_stack *stack, int value)
 {
 	t_node	*temp;
+	t_move	move;
 
-	temp = (*stack)->first;
+	temp = stack->first;
+	move.pos = 1;
 	while (temp)
 	{
-		if (temp->data > temp->next->data)
-			return (FALSE);
 		if (!temp->next)
 			break ;
+		if ((temp->next->data > value) && (temp->data < value))
+			return (move);
 		temp = temp->next;
+		move.pos++;
 	}
-	return (TRUE);
+	return (move);
 }

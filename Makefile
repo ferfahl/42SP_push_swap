@@ -35,8 +35,8 @@ MANDATORY_FILES =	01_main.c \
 					test.c \
 					utils.c \
 					utils_libft.c \
-					utils_algorithm.c \
 					testing_moves.c \
+					09_moving_back.c \
 
 BONUS_FILES =
 

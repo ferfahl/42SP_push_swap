@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   03_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/02/26 01:33:11 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:52:20 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_data	*add_node_value(long int number, int i)
 	t_data	*new_node;
 
 	new_node = (t_data *)malloc(sizeof(t_data));
+	if (number > INT_MAX || number < INT_MIN)
+		error_simple();
 	if (!new_node)
 		error_simple();
 	new_node->value = number;
@@ -79,7 +81,6 @@ void	init_list(int argc, char **argv, t_data **list)
 	while (++i < argc)
 		add_next_node(list, (ft_atoi_mod(argv[i])), 1);
 }
-// print_list_test(list);
 
 /**
 *@brief starts the list

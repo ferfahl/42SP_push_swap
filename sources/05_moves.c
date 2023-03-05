@@ -6,13 +6,12 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/01 23:23:43 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:52:05 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// (pa, pb) push: mover o elemento do topo de uma pilha para a outra
 /**
 *@brief push the first element of the stack to the other stack
 *@param source the stack to be pushed
@@ -36,9 +35,9 @@ void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 	source->first = temp;
 	source->size -= 1;
 	if (a_or_b == 'a')
-		ft_putstr_fd("pa\n", 2);
+		ft_putstr_fd("pa\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("pb\n", 2);
+		ft_putstr_fd("pb\n", 1);
 }
 
 /**
@@ -49,25 +48,26 @@ void	ft_push(t_stack *source, t_stack *dest, char a_or_b)
 */
 void	ft_swap(t_stack *stack, char a_or_b)
 {
-	t_node	*temp;
-	t_node	*aux;
+	t_node	*temp1;
+	t_node	*temp2;
 
 	if (!stack->first || !stack->last || stack->size == 1)
 		return ;
-	temp = stack->first;
-	aux = stack->first->next;
-	if (!aux)
+	temp1 = stack->first;
+	temp2 = stack->first->next;
+	if (!temp2)
 		return ;
-	temp->next = aux->next;
-	temp->prev = aux;
-	aux->prev = NULL;
-	aux->next = temp;
-	stack->first = aux;
-	temp->next->prev = temp;
+	temp1->next = temp2->next;
+	temp1->prev = temp2;
+	temp2->prev = NULL;
+	temp2->next = temp1;
+	if (temp1->next)
+		temp1->next->prev = temp1;
+	stack->first = temp2;
 	if (a_or_b == 'a')
-		ft_putstr_fd("sa\n", 2);
+		ft_putstr_fd("sa\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("sb\n", 2);
+		ft_putstr_fd("sb\n", 1);
 }
 
 /**
@@ -88,9 +88,9 @@ void	ft_rotate(t_stack *stack, char a_or_b)
 	stack->size--;
 	ft_add_back(stack, temp);
 	if (a_or_b == 'a')
-		ft_putstr_fd("ra\n", 2);
+		ft_putstr_fd("ra\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("rb\n", 2);
+		ft_putstr_fd("rb\n", 1);
 }
 
 /**
@@ -111,7 +111,7 @@ void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 	stack->size--;
 	ft_add_front(stack, temp);
 	if (a_or_b == 'a')
-		ft_putstr_fd("rra\n", 2);
+		ft_putstr_fd("rra\n", 1);
 	else if (a_or_b == 'b')
-		ft_putstr_fd("rrb\n", 2);
+		ft_putstr_fd("rrb\n", 1);
 }
