@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   05_moves.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/05 01:52:05 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:16:20 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,17 @@ void	ft_reverse_rotate(t_stack *stack, char a_or_b)
 		ft_putstr_fd("rra\n", 1);
 	else if (a_or_b == 'b')
 		ft_putstr_fd("rrb\n", 1);
+}
+
+/**
+*@brief calls functions to sort the stack
+*@param stack_a the stack to be sorted
+*@param stack_b the stack to help sorting
+*@return none
+*/
+void	ft_moves_like(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_algorithm(stack_a, stack_b);
+	algorithm_to_5(stack_a, stack_b);
+	returning_all(stack_a, stack_b);
 }

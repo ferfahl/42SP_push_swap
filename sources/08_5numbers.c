@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   08_5numbers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 08:56:12 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/05 02:35:59 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:05:02 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ the largest element on the stack.
 *@param stack stack to find the largest element
 *@return largest element on the stack
 */
-
 t_move	find_greater_pos(t_stack *stack)
 {
 	t_node	*temp;
@@ -48,7 +47,6 @@ the smallest element on the stack.
 *@param stack stack to find the smallest element
 *@return smallest element on the stack
 */
-
 t_move	find_smaller_pos(t_stack *stack)
 {
 	t_node	*temp;
@@ -79,7 +77,6 @@ stack A
 *@param stack_b the stack B
 *@return none
 */
-
 void	return_to_a(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a->size == 5 || stack_b->size == 0)
@@ -105,7 +102,6 @@ void	return_to_a(t_stack *stack_a, t_stack *stack_b)
 *@param a_or_b indicating whether it is A or B for the movement
 *@return none
 */
-
 void	algorithm_to_3(t_stack *stack, char a_or_b)
 {
 	t_move		p_max;
@@ -139,7 +135,6 @@ elements and the second stack with the 2 largest elements.
 *@param s_dest the dest stack, usually stack b
 *@return none
 */
-
 void	algorithm_to_5(t_stack *s_source, t_stack *s_dest)
 {
 	t_move	p_max;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   09_moving_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 21:13:45 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/05 02:35:05 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:23:09 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ stack_a.
 *@param s_b the stack B
 *@return none
 */
-
 void	s_bigger_value(t_stack *s_a, t_stack *s_b)
 {
 	ft_pa(s_a, s_b);
@@ -40,7 +39,6 @@ top of the stack_a
 *@param s_b the stack B
 *@return none
 */
-
 void	s_smaler_value(t_stack *s_a, t_stack *s_b)
 {
 	while (s_a->last->data < s_a->first->data)
@@ -61,8 +59,7 @@ be pushed into the stack_a at a different position
 *@param s_b the stack B
 *@return none
 */
-
-void	s_else(t_stack *s_a, t_stack *s_b, t_move	p_max)
+void	s_else(t_stack *s_a, t_stack *s_b, t_move p_max)
 {
 	p_max = find_position(s_a, s_b->first->data);
 	if (p_max.pos == 1)
@@ -92,7 +89,6 @@ relative to stack A.
 *@param s_b the stack B
 *@return none
 */
-
 void	find_pos(t_stack *s_a, t_stack *s_b)
 {
 	t_move	p_max;
@@ -124,7 +120,6 @@ the stack_a will be completely sorted.
 *@param s_b the stack B
 *@return none
 */
-
 void	returning_all(t_stack *stack_a, t_stack *stack_b)
 {
 	t_move	pos_min;

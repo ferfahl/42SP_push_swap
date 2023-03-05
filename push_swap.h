@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 18:14:54 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/05 00:55:17 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:10:04 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,12 @@ t_bool	check_sorted(t_data *list);
 t_move	find_position(t_stack *stack, int value);
 // t_bool	check_stack(t_stack *stack);
 
-// fill list/stack with args
+// Fill list/stack with args
 
 void	start_push(int argc, char **argv);
 void	fill_stack(t_stack *stack, t_data *list);
 void	start_stack(t_data **list);
+void	ft_moves_like(t_stack *stack_a, t_stack *stack_b);
 
 // Moving functions
 
@@ -93,23 +94,21 @@ t_move	find_greater_pos(t_stack *stack);
 void	ft_add_back(t_stack *stack, t_node *new);
 void	ft_add_front(t_stack *stack, t_node *new);
 
-// testing functions
+// Testing functions
 
 void	print_list_test(t_data **list);
 void	ft_print_stack(t_stack *stack);
 void	ft_print_stack_simple(t_stack *stack, char a_or_b);
-void	ft_moves_like(t_stack *stack_a, t_stack *stack_b);
+void	ft_test_all_moves(t_stack *stack_a, t_stack *stack_b);
 
 // Algorithms -> start
 
+int		ft_calculate_lower(t_stack *stack, int size);
 void	ft_algorithm(t_stack *stack_a, t_stack *stack_b);
 void	returning_all(t_stack *stack_a, t_stack *stack_b);
 
-// Algorithms -> utils
-
-int		ft_calculate_lower(t_stack *stack, int size);
-
 // Algoritms 5 numbers
+
 void	algorithm_to_3(t_stack *stack, char a_or_b);
 void	algorithm_to_5(t_stack *stack_source, t_stack *stack_dest);
 
