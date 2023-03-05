@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   07_algorithm.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:30:50 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/05 02:35:31 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 14:08:08 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	ft_calculate_lower(t_stack *stack, int size)
 *@param p_b percentage b
 *@return none
 */
-
 void	ft_size_100(t_stack *s_a, t_stack *s_b, int p_b)
 {
 	int	p_a;
@@ -79,7 +78,6 @@ elements
 *@param p_b percentage b
 *@return none
 */
-
 void	ft_size_50(t_stack *s_a, t_stack *s_b, int p_b)
 {
 	int	p_a;
@@ -117,7 +115,6 @@ elements
 *@param p_b percentage b
 *@return none
 */
-
 void	ft_size_5_49(t_stack *s_a, t_stack *s_b, int p_b)
 {
 	int	p_a;
@@ -149,7 +146,6 @@ void	ft_size_5_49(t_stack *s_a, t_stack *s_b, int p_b)
 *@param s_b the stack B
 *@return none
 */
-
 void	ft_algorithm(t_stack *s_a, t_stack *s_b)
 {
 	int	percentage_b;
