@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   08_5numbers.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 08:56:12 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/04 16:15:10 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:01:04 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_move	find_greater_pos(t_stack *stack)
 		temp = temp->next;
 		i++;
 	}
-	// ft_printf("in a large: %d, %d\n", move.pos, move.value);
 	return (move);
 }
 
@@ -56,7 +55,6 @@ t_move	find_smaller_pos(t_stack *stack)
 		temp = temp->next;
 		i++;
 	}
-	// ft_printf("in a small: %d, %d\n", move.pos, move.value);
 	return (move);
 }
 
@@ -103,28 +101,26 @@ void	algorithm_to_3(t_stack *stack, char a_or_b)
 		ft_reverse_rotate(stack, a_or_b);
 }
 
-void	algorithm_to_5(t_stack *stack_source, t_stack *stack_dest)
+void	algorithm_to_5(t_stack *s_source, t_stack *s_dest)
 {
 	t_move	p_max;
 	t_move	p_min;
 
-	while (stack_source->size > 3)
+	while (s_source->size > 3)
 	{
-		p_max = find_greater_pos(stack_source);
-		p_min = find_smaller_pos(stack_source);
+		p_max = find_greater_pos(s_source);
+		p_min = find_smaller_pos(s_source);
 		if (p_min.pos == 1 || p_max.pos == 1)
-			ft_pb(stack_source, stack_dest);
-		else if (p_max.pos == stack_source->size || p_min.pos == stack_source->size)
-			ft_reverse_rotate(stack_source, 'a');
+			ft_pb(s_source, s_dest);
+		else if (p_max.pos == s_source->size || p_min.pos == s_source->size)
+			ft_reverse_rotate(s_source, 'a');
 		else if (p_max.pos == 2 || p_min.pos == 2)
-			ft_swap(stack_source, 'a');
+			ft_swap(s_source, 'a');
 		else if (p_min.pos == 4 || p_max.pos == 4)
-			ft_reverse_rotate(stack_source, 'a');
+			ft_reverse_rotate(s_source, 'a');
 		else
-			ft_pb(stack_source, stack_dest);
+			ft_pb(s_source, s_dest);
 	}
-	algorithm_to_3(stack_source, 'a');
-	return_to_a(stack_source, stack_dest);
-	// ft_printf("final sort 5\n");
-	// ft_print_stack_simple(stack_source, 'a');
+	algorithm_to_3(s_source, 'a');
+	return_to_a(s_source, s_dest);
 }

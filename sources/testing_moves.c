@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   testing_moves.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 12:52:04 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/04 13:50:09 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:48:18 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,4 @@ void	ft_moves_like(t_stack *stack_a, t_stack *stack_b)
 	ft_algorithm(stack_a, stack_b);
 	algorithm_to_5(stack_a, stack_b);
 	returning_all(stack_a, stack_b);
-	// ft_print_stack_simple(stack_a, 'a');
-	// ft_print_stack_simple(stack_b, 'b');
 }
