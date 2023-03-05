@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:30:50 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/05 02:05:38 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 02:35:31 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ void	ft_size_100(t_stack *s_a, t_stack *s_b, int p_b)
 }
 
 /**
-*@brief is called when the stack to be sorted has a size between 50 and 99 elements
+*@brief is called when the stack to be sorted has a size between 50 and 99
+elements
 *@param s_a the stack A
 *@param s_b the stack B
 *@param p_b percentage b
@@ -109,7 +110,8 @@ void	ft_size_50(t_stack *s_a, t_stack *s_b, int p_b)
 }
 
 /**
-*@brief is called when the stack to be sorted has a size between 5 and 49 elements
+*@brief is called when the stack to be sorted has a size between 5 and 49
+elements
 *@param s_a the stack A
 *@param s_b the stack B
 *@param p_b percentage b

@@ -6,14 +6,15 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 08:56:12 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/05 02:21:28 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 02:35:59 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /**
-*@brief the function returns the structure moves with the position and value of the largest element on the stack.
+*@brief the function returns the structure moves with the position and value of
+the largest element on the stack.
 *@param stack stack to find the largest element
 *@return largest element on the stack
 */
@@ -42,7 +43,8 @@ t_move	find_greater_pos(t_stack *stack)
 }
 
 /**
-*@brief the function returns the structure moves with the position and value of the smallest element on the stack.
+*@brief the function returns the structure moves with the position and value of
+the smallest element on the stack.
 *@param stack stack to find the smallest element
 *@return smallest element on the stack
 */
@@ -71,7 +73,8 @@ t_move	find_smaller_pos(t_stack *stack)
 }
 
 /**
-*@brief This function is responsible for moving all elements from stack B to stack A
+*@brief This function is responsible for moving all elements from stack B to
+stack A
 *@param stack_a the stack A
 *@param stack_b the stack B
 *@return none
@@ -96,7 +99,8 @@ void	return_to_a(t_stack *stack_a, t_stack *stack_b)
 }
 
 /**
-*@brief This function implements an algorithm to sort a stack with a maximum of 3 elements. The function is called recursively until the stack is sorted.
+*@brief This function implements an algorithm to sort a stack with a maximum of
+3 elements. The function is called recursively until the stack is sorted.
 *@param stack the stack
 *@param a_or_b indicating whether it is A or B for the movement
 *@return none
@@ -128,7 +132,9 @@ void	algorithm_to_3(t_stack *stack, char a_or_b)
 }
 
 /**
-*@brief This function implements the algorithm for sorting a stack of size 5. The strategy is to split the stack in two: the first stack with the 3 smallest elements and the second stack with the 2 largest elements.
+*@brief This function implements the algorithm for sorting a stack of size 5.
+The strategy is to split the stack in two: the first stack with the 3 smallest
+elements and the second stack with the 2 largest elements.
 *@param s_source the source stack, usually stack a
 *@param s_dest the dest stack, usually stack b
 *@return none
