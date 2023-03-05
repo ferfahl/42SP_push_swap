@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   05_moves.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: feralves <feralves@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:18:35 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/04 13:35:30 by feralves         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:52:05 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// (pa, pb) push: mover o elemento do topo de uma pilha para a outra
 /**
 *@brief push the first element of the stack to the other stack
 *@param source the stack to be pushed

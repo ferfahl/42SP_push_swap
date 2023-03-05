@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:20:09 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/05 00:11:23 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 01:52:20 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	init_list(int argc, char **argv, t_data **list)
 	while (++i < argc)
 		add_next_node(list, (ft_atoi_mod(argv[i])), 1);
 }
-// print_list_test(list);
 
 /**
 *@brief starts the list

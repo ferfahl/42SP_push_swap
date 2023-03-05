@@ -6,11 +6,18 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 21:13:45 by mcarecho          #+#    #+#             */
-/*   Updated: 2023/03/05 01:48:08 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 02:32:54 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/**
+*@brief handles the case where the top value of the stack_b is greater than any value on the stack_a. It moves the value from the stack_b to the stack_a and does a double rotation on the stack_a if the moved value is at the end of the stack_a.
+*@param s_a the stack A
+*@param s_b the stack B
+*@return none
+*/
 
 void	s_bigger_value(t_stack *s_a, t_stack *s_b)
 {
@@ -20,6 +27,13 @@ void	s_bigger_value(t_stack *s_a, t_stack *s_b)
 	else
 		ft_rotate(s_a, 'a');
 }
+
+/**
+*@brief handles the case where the top value of the stack_b is less than any value on the stack_a. It moves the value from the stack_b to the stack_a and does one or more reverse rotations on the stack_a if the moved value is at the top of the stack_a
+*@param s_a the stack A
+*@param s_b the stack B
+*@return none
+*/
 
 void	s_smaler_value(t_stack *s_a, t_stack *s_b)
 {
@@ -33,6 +47,13 @@ void	s_smaler_value(t_stack *s_a, t_stack *s_b)
 		&& s_b->first->data < s_b->first->next->data)
 		ft_swap(s_b, 'b');
 }
+
+/**
+*@brief handles all other cases where the top value from the stack_b needs to be pushed into the stack_a at a different position
+*@param s_a the stack A
+*@param s_b the stack B
+*@return none
+*/
 
 void	s_else(t_stack *s_a, t_stack *s_b, t_move	p_max)
 {
@@ -57,6 +78,13 @@ void	s_else(t_stack *s_a, t_stack *s_b, t_move	p_max)
 		ft_reverse_rotate(s_a, 'a');
 }
 
+/**
+*@brief is responsible for finding the correct position of elements in stack B relative to stack A.
+*@param s_a the stack A
+*@param s_b the stack B
+*@return none
+*/
+
 void	find_pos(t_stack *s_a, t_stack *s_b)
 {
 	t_move	p_max;
@@ -76,6 +104,13 @@ void	find_pos(t_stack *s_a, t_stack *s_b)
 			s_else(s_a, s_b, p_max);
 	}
 }
+
+/**
+*@brief sort the stack_a. First, the function calls the find_pos function to position each element of the stack_b relative to the stack_a stack. The function then finds the position of the smallest element in the stack_a via the find_smaller_pos function. Then, the function rotates the stack_a elements until the smallest element is in the first position of the stack. With this, the stack_a will be completely sorted.
+*@param s_a the stack A
+*@param s_b the stack B
+*@return none
+*/
 
 void	returning_all(t_stack *stack_a, t_stack *stack_b)
 {

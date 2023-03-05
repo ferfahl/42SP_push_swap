@@ -6,7 +6,7 @@
 /*   By: mcarecho <mcarecho@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 22:30:50 by feralves          #+#    #+#             */
-/*   Updated: 2023/03/05 01:14:46 by mcarecho         ###   ########.fr       */
+/*   Updated: 2023/03/05 02:05:38 by mcarecho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,14 @@ int	ft_calculate_lower(t_stack *stack, int size)
 	return (result);
 }
 
+/**
+*@brief is called to organize the stack when it contains more than 100 elements
+*@param s_a the stack A
+*@param s_b the stack B
+*@param p_b percentage b
+*@return none
+*/
+
 void	ft_size_100(t_stack *s_a, t_stack *s_b, int p_b)
 {
 	int	p_a;
@@ -62,6 +70,14 @@ void	ft_size_100(t_stack *s_a, t_stack *s_b, int p_b)
 			ft_double_rotate(s_a, s_b);
 	}
 }
+
+/**
+*@brief is called when the stack to be sorted has a size between 50 and 99 elements
+*@param s_a the stack A
+*@param s_b the stack B
+*@param p_b percentage b
+*@return none
+*/
 
 void	ft_size_50(t_stack *s_a, t_stack *s_b, int p_b)
 {
@@ -91,6 +107,14 @@ void	ft_size_50(t_stack *s_a, t_stack *s_b, int p_b)
 			ft_double_rotate(s_a, s_b);
 	}
 }
+
+/**
+*@brief is called when the stack to be sorted has a size between 5 and 49 elements
+*@param s_a the stack A
+*@param s_b the stack B
+*@param p_b percentage b
+*@return none
+*/
 
 void	ft_size_5_49(t_stack *s_a, t_stack *s_b, int p_b)
 {
