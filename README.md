@@ -27,3 +27,6 @@ Sort the stack A in an ascending order numbers(from smallest to largest) with th
 * In case of error, it must display "Error" followed by a ’\n’ on the standard error. Errors include for example: some arguments aren’t integers, some arguments are
 bigger than an integer and/or there are duplicates
 * External functions that are allowed: read, write, malloc, free, exit
+
+
+### Project approved with 96/100 score.
