@@ -1,7 +1,9 @@
 # 42SP_push_swap
 The <b>push_swap</b> program is a project from école 42. There are stickt rules to follow.
 
-[![feralves's 42 push_swap Score](https://badge42.vercel.app/api/v2/cli7l4sim001108mvngbgwmeh/project/2922598)](https://github.com/JaeSeoKim/badge42)
+<div align="center">
+<a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cli7l4sim001108mvngbgwmeh/project/2922598" alt="feralves's 42 push_swap Score" /></a>
+</div>
 
 ## Main goal
 Sort the stack A in an ascending order numbers(from smallest to largest) with the least amount of moves possible. 
